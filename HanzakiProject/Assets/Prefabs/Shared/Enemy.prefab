@@ -24,6 +24,7 @@ GameObject:
   - 114: {fileID: 114000014060988040}
   - 114: {fileID: 114000013155198250}
   - 54: {fileID: 54000011636046928}
+  - 195: {fileID: 195000010005909950}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -37,9 +38,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010307394082}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 164.65895, y: 15.69, z: 312.73517}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 164.65895, y: 11.56, z: 312.73517}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
@@ -137,3 +138,23 @@ MonoBehaviour:
   health: 6
   healthSprite: {fileID: 100000, guid: 2db0c23d785fe83479c26cd1fb2334a2, type: 3}
   spriteArray: []
+--- !u!195 &195000010005909950
+NavMeshAgent:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010307394082}
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 1
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4

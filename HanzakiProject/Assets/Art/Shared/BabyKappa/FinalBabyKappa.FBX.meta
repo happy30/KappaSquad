@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: b3934eb22a6824f4d97abe6e14a7ec9c
-timeCreated: 1475239323
+guid: 8b3bfd849ded94d47861d5ba3f9a7192
+timeCreated: 1476188927
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -9,7 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Sphere001
+    4300000: Kappa
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -35,7 +35,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 1.5
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
