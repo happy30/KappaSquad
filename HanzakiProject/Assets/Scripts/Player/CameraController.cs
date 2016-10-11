@@ -15,6 +15,7 @@ public class CameraController : MonoBehaviour
     public bool inPuzzle;
 
     public GameObject followObject;
+    public GameObject hookObject;
 
 
 	// Use this for initialization
@@ -76,12 +77,22 @@ public class CameraController : MonoBehaviour
         if(!inPuzzle)
         {
             transform.position = Vector3.Lerp(transform.position, new Vector3(player.transform.position.x + cameraOffsetX, player.transform.position.y + cameraOffsetY, player.transform.position.z - 15f), followTime * Time.deltaTime);
-            transform.eulerAngles = Vector3.Lerp(transform.eulerAngles, new Vector3(30, 0, 0), followTime * Time.deltaTime);
+            if (hookObject != null)
+            {
+                Vector3 dirVector = hookObject.transform.position - transform.position;
+                Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(dirVector), followTime * Time.deltaTime);
+            }
+            else
+            {
+                transform.eulerAngles = Vector3.Lerp(transform.eulerAngles, new Vector3(30, 0, 0), followTime * Time.deltaTime);
+            }
+            
         }
         else
         {
             transform.position = Vector3.Lerp(transform.position, new Vector3(player.transform.position.x + cameraOffsetX, player.transform.position.y + 30, player.transform.position.z), followTime * Time.deltaTime);
             transform.eulerAngles = Vector3.Lerp(transform.eulerAngles, new Vector3(80, 0, 0), followTime * Time.deltaTime);
+           
         }
         
         //transform.position = Vector3.Lerp(transform.position, new Vector3(player.transform.position.x + cameraOffsetX, player.transform.position.y + cameraOffsetY, player.transform.position.z - 20f), followTime * Time.deltaTime);
@@ -98,7 +109,7 @@ public class CameraController : MonoBehaviour
         else
         {
             transform.eulerAngles = Vector3.Lerp(transform.eulerAngles, new Vector3(30, 0, 0), followTime * Time.deltaTime);
-            transform.position = Vector3.Lerp(transform.position, new Vector3(followThis.transform.position.x, followThis.transform.position.y + 5, -8f), followTime * Time.deltaTime);
+            transform.position = Vector3.Lerp(transform.position, new Vector3(followThis.transform.position.x, followThis.transform.position.y + 5, followThis.transform.position.z -8f), followTime * Time.deltaTime);
 
         }      
     }

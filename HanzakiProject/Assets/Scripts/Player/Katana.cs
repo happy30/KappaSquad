@@ -25,7 +25,7 @@ public class Katana : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKey(InputManager.Slash))
+        if(Input.GetKey(InputManager.Slash) && !Camera.main.GetComponent<CameraController>().inCutscene)
         {
             //Animator.playanimation
             playerController.Dash(5);
