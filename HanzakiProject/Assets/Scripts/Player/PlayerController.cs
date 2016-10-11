@@ -68,7 +68,6 @@ public class PlayerController : MonoBehaviour
         CheckForDash();
         CheckForSlipperyTile();
         CheckVulnerability();
-        Debug.DrawRay(playerModel.transform.position, playerModel.transform.forward);
     }
 
 
@@ -187,7 +186,6 @@ public class PlayerController : MonoBehaviour
             {
                 buttonCount = 0;
             }
-            
         }
         else
         {
@@ -217,21 +215,21 @@ public class PlayerController : MonoBehaviour
         }
         if(onSlipperyTile && !onSlipperyTileNearWall)
         {
-            if (playerModel.transform.eulerAngles == new Vector3(0, 90, 0))
+            if (Mathf.Round(playerModel.transform.eulerAngles.y) == 90)
             {
-                xMovement =  stats.runSpeed * Time.deltaTime;
+                xMovement =  stats.runSpeed * 1.5f * Time.deltaTime;
             }
-            else if (playerModel.transform.eulerAngles == new Vector3(0, -90, 0))
+            else if (Mathf.Round(playerModel.transform.eulerAngles.y) == 270)
             {
-                xMovement = -stats.runSpeed * Time.deltaTime;
+                xMovement = -stats.runSpeed * 1.5f * Time.deltaTime;
             }
-            else if (playerModel.transform.eulerAngles == new Vector3(0, 0, 0))
+            else if (Mathf.Round(playerModel.transform.eulerAngles.y) == 0)
             {
-                zMovement = stats.runSpeed * Time.deltaTime;
+                zMovement = stats.runSpeed * 1.5f * Time.deltaTime;
             }
-            else if (playerModel.transform.eulerAngles == new Vector3(0, 180, 0))
+            else if (Mathf.Round(playerModel.transform.eulerAngles.y) == 180)
             {
-                zMovement = -stats.runSpeed * Time.deltaTime;
+                zMovement = -stats.runSpeed * 1.5f * Time.deltaTime;
             }
         }
         if(onSlipperyTile && onSlipperyTileNearWall)
@@ -240,6 +238,7 @@ public class PlayerController : MonoBehaviour
             if(xMovement != 0 || zMovement != 0)
             {
                 onSlipperyTile = true;
+                onSlipperyTileNearWall = false;
             }
         }
 
@@ -280,7 +279,6 @@ public class PlayerController : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(transform.position, -transform.right, out hit, modelWidth))
         {
-            onSlipperyTileNearWall = true;
             if (xMovement < 0)
             {
                 xMovement = 0;
@@ -288,7 +286,6 @@ public class PlayerController : MonoBehaviour
         }
         if (Physics.Raycast(transform.position, transform.right, out hit, modelWidth))
         {
-            onSlipperyTileNearWall = true;
             if (xMovement > 0)
             {
                 xMovement = 0;
@@ -298,7 +295,6 @@ public class PlayerController : MonoBehaviour
         {
             if (Physics.Raycast(transform.position, transform.forward, out hit, modelWidth))
             {
-                onSlipperyTileNearWall = true;
                 if (zMovement > 0)
                 {
                     zMovement = 0;
@@ -306,11 +302,14 @@ public class PlayerController : MonoBehaviour
             }
             if (Physics.Raycast(transform.position, -transform.forward, out hit, modelWidth))
             {
-                onSlipperyTileNearWall = true;
                 if (zMovement < 0)
                 {
                     zMovement = 0;
                 }
+            }
+            if(Physics.Raycast(playerModel.transform.position, playerModel.transform.forward, out hit, modelWidth))
+            {
+                onSlipperyTileNearWall = true;
             }
         }
     }

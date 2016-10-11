@@ -76,16 +76,16 @@ public class CameraController : MonoBehaviour
 
         if(!inPuzzle)
         {
-            transform.position = Vector3.Lerp(transform.position, new Vector3(player.transform.position.x + cameraOffsetX, player.transform.position.y + cameraOffsetY, player.transform.position.z - 15f), followTime * Time.deltaTime);
-            if (hookObject != null)
+            if(hookObject == null)
             {
-                Vector3 dirVector = hookObject.transform.position - transform.position;
-                Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(dirVector), followTime * Time.deltaTime);
+                transform.position = Vector3.Lerp(transform.position, new Vector3(player.transform.position.x + cameraOffsetX, player.transform.position.y + cameraOffsetY, player.transform.position.z - 15f), followTime * Time.deltaTime);
             }
             else
             {
-                transform.eulerAngles = Vector3.Lerp(transform.eulerAngles, new Vector3(30, 0, 0), followTime * Time.deltaTime);
+                transform.position = Vector3.Lerp(transform.position, new Vector3(hookObject.transform.position.x, player.transform.position.y + cameraOffsetY, player.transform.position.z - 15f), followTime * Time.deltaTime);
             }
+            
+            transform.eulerAngles = Vector3.Lerp(transform.eulerAngles, new Vector3(30, 0, 0), followTime * Time.deltaTime);
             
         }
         else
