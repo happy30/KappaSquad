@@ -1,20 +1,30 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-guid: 1d634d40a308e3d45a7013e906aa0729
-timeCreated: 1476190715
-=======
-guid: 98760a4a6f54d904e8ec9c3a1e7d69ef
+guid: d706af67ab1ddfd42ae4cae5e08d311b
 timeCreated: 1476191811
->>>>>>> 23d43bd3b5212cddee965b5dabb9c8004ebe2518
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Knife002
+    100004: Knife003
+    100006: Knife1
     400000: //RootNode
+    400002: Knife002
+    400004: Knife003
+    400006: Knife1
     2300000: //RootNode
+    2300002: Knife002
+    2300004: Knife003
+    2300006: Knife1
     3300000: //RootNode
-    4300000: Lamp
+    3300002: Knife002
+    3300004: Knife003
+    3300006: Knife1
+    4300000: shurikun
+    4300002: Knife003
+    4300004: Knife002
+    4300006: Knife1
     9500000: //RootNode
   materials:
     importMaterials: 1
