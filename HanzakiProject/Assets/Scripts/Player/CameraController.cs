@@ -17,6 +17,8 @@ public class CameraController : MonoBehaviour
     public GameObject followObject;
     public GameObject hookObject;
 
+    public Vector3 cameraRot;
+
 
 	// Use this for initialization
 	void Start ()
@@ -31,12 +33,12 @@ public class CameraController : MonoBehaviour
         if(playerController.levelType == PlayerController.LevelType.TD)
         {
             cameraOffsetY = 10;
-            transform.eulerAngles = new Vector3(30, 0, 0);
+            cameraRot = new Vector3(30, 0, 0);
         }
         else
         {
             cameraOffsetY = 5;
-            transform.eulerAngles = new Vector3(8, 0, 0);
+            transform.eulerAngles = new Vector3(0, 0, 0);
         }
     }
 	
@@ -85,7 +87,7 @@ public class CameraController : MonoBehaviour
                 transform.position = Vector3.Lerp(transform.position, new Vector3(hookObject.transform.position.x, player.transform.position.y + cameraOffsetY, player.transform.position.z - 15f), followTime * Time.deltaTime);
             }
             
-            transform.eulerAngles = Vector3.Lerp(transform.eulerAngles, new Vector3(30, 0, 0), followTime * Time.deltaTime);
+            transform.eulerAngles = Vector3.Lerp(transform.eulerAngles, cameraRot, followTime * Time.deltaTime);
             
         }
         else
