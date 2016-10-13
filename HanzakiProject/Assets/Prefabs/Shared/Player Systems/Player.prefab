@@ -43,6 +43,8 @@ GameObject:
   - 114: {fileID: 114000014240909074}
   - 114: {fileID: 114000012478805436}
   - 114: {fileID: 114000010942075822}
+  - 120: {fileID: 120000012180477432}
+  - 114: {fileID: 114000012385697826}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -235,6 +237,30 @@ MonoBehaviour:
   reloading: 0
   shurikenObject: {fileID: 1000010098452098, guid: 53472b907efea2d4a93ee611d0c94091,
     type: 2}
+--- !u!114 &114000012385697826
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013027347028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17eee1e3f3df5a54a8586e47f3de66fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stats: {fileID: 0}
+  canHook: 0
+  hook: {fileID: 0}
+  clawSpeed: 50
+  claw: {fileID: 1000011496644268, guid: c63712b90fb4b144281c23db3ccbf236, type: 2}
+  linePositions:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  grabbing: 0
+  grabTimer: 0
+  hookCooldown: 0
+  _rb: {fileID: 0}
+  playerModel: {fileID: 0}
 --- !u!114 &114000012478805436
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -262,7 +288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5d9259235fc78a4fa1ba8606b885d81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelType: 1
+  levelType: 0
   jumpHeight: 10
   xMovement: 0
   zMovement: 0
@@ -272,10 +298,52 @@ MonoBehaviour:
   buttonCount: 0
   lastKey: 0
   doubleTapTime: 0
-  dashSpeed: 1
+  dashSpeed: 12
   dashCooldown: 0
   invulnerable: 0
   invulnerableTime: 0
+--- !u!120 &120000012180477432
+LineRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013027347028}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 418882047642b8741966c7fa04cd0c3a, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedWireframeHidden: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Positions:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 1}
+  m_Parameters:
+    startWidth: 1
+    endWidth: 1
+    m_StartColor:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_EndColor:
+      serializedVersion: 2
+      rgba: 4294967295
+  m_UseWorldSpace: 1
 --- !u!136 &136000012690400436
 CapsuleCollider:
   m_ObjectHideFlags: 1
