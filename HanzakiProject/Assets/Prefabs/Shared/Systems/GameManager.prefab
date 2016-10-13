@@ -111,10 +111,10 @@ MonoBehaviour:
   health: 0
   maxHealth: 0
   hookParts: 0
-  katanaUnlocked: 0
-  grapplingHookUnlocked: 0
-  shurikenUnlocked: 0
-  smokeBombUnlocked: 0
+  katanaUnlocked: 1
+  grapplingHookUnlocked: 1
+  shurikenUnlocked: 1
+  smokeBombUnlocked: 1
   shurikenAmount: 0
   smokeBombAmount: 0
 --- !u!114 &114000013755845498
