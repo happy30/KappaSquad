@@ -44,7 +44,7 @@ public class GrapplingHook : MonoBehaviour {
 
             if(Vector3.Distance(spawnedClaw.transform.position, hook.transform.position) < 0.1f)
             {
-                _rb.velocity = (hook.transform.position - transform.position)
+                _rb.velocity = (hook.transform.position - transform.position);
             }
         }
         else

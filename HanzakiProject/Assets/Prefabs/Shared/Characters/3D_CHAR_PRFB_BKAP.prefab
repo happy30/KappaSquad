@@ -68,6 +68,7 @@ GameObject:
   - 114: {fileID: 114000011521750310}
   - 54: {fileID: 54000010648559628}
   - 195: {fileID: 195000011859296540}
+  - 95: {fileID: 95000013544269914}
   m_Layer: 0
   m_Name: 3D_CHAR_PRFB_BKAP
   m_TagString: Untagged
@@ -2181,6 +2182,23 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &95000013544269914
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010162921490}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 76fef13d399aac64eb63883041dc7457, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114000011521750310
 MonoBehaviour:
   m_ObjectHideFlags: 1
