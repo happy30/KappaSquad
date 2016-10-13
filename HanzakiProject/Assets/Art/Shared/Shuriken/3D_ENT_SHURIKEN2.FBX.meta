@@ -1,5 +1,7 @@
 fileFormatVersion: 2
-guid: 2db0c23d785fe83479c26cd1fb2334a2
+guid: 804c5c8cdc0f2e34388125ce8fcdb6e5
+timeCreated: 1476190715
+licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
@@ -25,7 +27,7 @@ ModelImporter:
     4300006: Knife1
     9500000: //RootNode
   materials:
-    importMaterials: 0
+    importMaterials: 1
     materialName: 0
     materialSearch: 1
   animations:
@@ -48,7 +50,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
