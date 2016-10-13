@@ -89,9 +89,7 @@ public class GrapplingHook : MonoBehaviour {
 
             if(Vector3.Distance(spawnedClaw.transform.position, hook.transform.position) < 0.1f)
             {
-<<<<<<< HEAD
                 _rb.velocity = (hook.transform.position - transform.position);
-=======
                 if (grabTimer < 1)
                 {
                     _rb.velocity = ((hook.transform.position - transform.position) * 2);
@@ -107,9 +105,6 @@ public class GrapplingHook : MonoBehaviour {
                     linePositions[1] = new Vector3(0, 0, 0);
                     _line.SetPositions(linePositions);
                 }
-                
-               
->>>>>>> ccddf9b582a4c6ecc127786344e47ae22ee6eab7
             }
         }
         else
