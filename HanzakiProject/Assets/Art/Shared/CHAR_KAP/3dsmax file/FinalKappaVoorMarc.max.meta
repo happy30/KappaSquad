@@ -1,15 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 guid: 6af7f58d749feb8469e3232391c9902a
-timeCreated: 1477316248
-licenseType: Free
-ModelImporter:
-  serializedVersion: 19
-  fileIDToRecycleName: {}
-=======
-guid: e08607ab46c4eef49a0c12a6a0910a06
-timeCreated: 1477315342
-licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
@@ -46,47 +36,8 @@ ModelImporter:
     100060: Bip001 R Toe0Nub
     100062: Bip001 R UpperArm
     100064: Bip001 Spine
-    100066: Bip001 Spine1
-    100068: Bip001 Spine2
-    100070: Bip001 Spine3
-    100072: Bip002
-    100074: Bip002 Footsteps
-    100076: Bip002 Head
-    100078: Bip002 HeadNub
-    100080: Bip002 L Calf
-    100082: Bip002 L Clavicle
-    100084: Bip002 L Finger0
-    100086: Bip002 L Finger0Nub
-    100088: Bip002 L Foot
-    100090: Bip002 L Forearm
-    100092: Bip002 L Hand
-    100094: Bip002 L Thigh
-    100096: Bip002 L Toe0
-    100098: Bip002 L Toe01
-    100100: Bip002 L Toe02
-    100102: Bip002 L Toe0Nub
-    100104: Bip002 L UpperArm
-    100106: Bip002 Neck
-    100108: Bip002 Pelvis
-    100110: Bip002 R Calf
-    100112: Bip002 R Clavicle
-    100114: Bip002 R Finger0
-    100116: Bip002 R Finger0Nub
-    100118: Bip002 R Foot
-    100120: Bip002 R Forearm
-    100122: Bip002 R Hand
-    100124: Bip002 R Thigh
-    100126: Bip002 R Toe0
-    100128: Bip002 R Toe01
-    100130: Bip002 R Toe02
-    100132: Bip002 R Toe0Nub
-    100134: Bip002 R UpperArm
-    100136: Bip002 Spine
-    100138: Bip002 Spine1
-    100140: Bip002 Spine2
-    100142: Bip002 Spine3
-    100144: //RootNode
-    100146: Kappa
+    100066: //RootNode
+    100068: Kappa
     400000: Bip001
     400002: Bip001 Footsteps
     400004: Bip001 Head
@@ -120,53 +71,12 @@ ModelImporter:
     400060: Bip001 R Toe0Nub
     400062: Bip001 R UpperArm
     400064: Bip001 Spine
-    400066: Bip001 Spine1
-    400068: Bip001 Spine2
-    400070: Bip001 Spine3
-    400072: Bip002
-    400074: Bip002 Footsteps
-    400076: Bip002 Head
-    400078: Bip002 HeadNub
-    400080: Bip002 L Calf
-    400082: Bip002 L Clavicle
-    400084: Bip002 L Finger0
-    400086: Bip002 L Finger0Nub
-    400088: Bip002 L Foot
-    400090: Bip002 L Forearm
-    400092: Bip002 L Hand
-    400094: Bip002 L Thigh
-    400096: Bip002 L Toe0
-    400098: Bip002 L Toe01
-    400100: Bip002 L Toe02
-    400102: Bip002 L Toe0Nub
-    400104: Bip002 L UpperArm
-    400106: Bip002 Neck
-    400108: Bip002 Pelvis
-    400110: Bip002 R Calf
-    400112: Bip002 R Clavicle
-    400114: Bip002 R Finger0
-    400116: Bip002 R Finger0Nub
-    400118: Bip002 R Foot
-    400120: Bip002 R Forearm
-    400122: Bip002 R Hand
-    400124: Bip002 R Thigh
-    400126: Bip002 R Toe0
-    400128: Bip002 R Toe01
-    400130: Bip002 R Toe02
-    400132: Bip002 R Toe0Nub
-    400134: Bip002 R UpperArm
-    400136: Bip002 Spine
-    400138: Bip002 Spine1
-    400140: Bip002 Spine2
-    400142: Bip002 Spine3
-    400144: //RootNode
-    400146: Kappa
-    2300000: Kappa
-    3300000: Kappa
+    400066: //RootNode
+    400068: Kappa
     4300000: Kappa
     7400000: Take 001
     9500000: //RootNode
->>>>>>> 06be3ab9d745812da3c66a9bb99754f6ecfb694b
+    13700000: Kappa
   materials:
     importMaterials: 1
     materialName: 0
@@ -191,7 +101,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 0
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
