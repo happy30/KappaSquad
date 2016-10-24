@@ -21,12 +21,14 @@ public class ShurikenObject : MonoBehaviour
     void Start()
     {
         shurikenDirection = player.transform.forward;
+        transform.eulerAngles = new Vector3(90, 0, 0);
     }
 	
 	// Update is called once per frame
 	void FixedUpdate ()
     {
         transform.Translate(shurikenDirection * projectileSpeed * Time.deltaTime);
+        transform.Rotate(0, 90 * Time.deltaTime, 0);
     }
 
     void OnTriggerEnter(Collider col)
