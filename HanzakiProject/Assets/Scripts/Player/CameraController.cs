@@ -37,7 +37,7 @@ public class CameraController : MonoBehaviour
         }
         else
         {
-            cameraOffsetY = 5;
+            cameraOffsetY = 1;
             transform.eulerAngles = new Vector3(0, 0, 0);
         }
     }
@@ -80,7 +80,7 @@ public class CameraController : MonoBehaviour
         {
             if(hookObject == null)
             {
-                transform.position = Vector3.Lerp(transform.position, new Vector3(player.transform.position.x + cameraOffsetX, player.transform.position.y + cameraOffsetY, player.transform.position.z - 15f), followTime * Time.deltaTime);
+                transform.position = Vector3.Lerp(transform.position, new Vector3(player.transform.position.x + cameraOffsetX, player.transform.position.y + cameraOffsetY, player.transform.position.z - 10f), followTime * Time.deltaTime);
             }
             else
             {
