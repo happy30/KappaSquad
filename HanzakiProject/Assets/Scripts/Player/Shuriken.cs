@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿//Shuriken by Jordi
+
+using UnityEngine;
 using System.Collections;
 
 public class Shuriken : MonoBehaviour {
