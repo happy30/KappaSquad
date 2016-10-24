@@ -86,7 +86,7 @@ public class CutsceneController : MonoBehaviour
     public void DeActivate()
     {
         ui.npcNameTextObject.GetComponent<Animator>().SetBool("FadeIn", false);
-        ui.npcNameText.color = new Color(255, 255, 255, 0);
+        ui.npcNameText.color = new Color(ui.npcNameText.color.r, ui.npcNameText.color.g, ui.npcNameText.color.b, 0);
         currentText = 0;
         if(_interact.interactType == InteractScript.InteractType.OnTrigger)
         {

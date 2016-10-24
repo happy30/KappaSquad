@@ -2413,11 +2413,11 @@ MonoBehaviour:
   questManager: {fileID: 0}
   ui: {fileID: 0}
   progressionManager: {fileID: 0}
-  npcName: Block
+  npcName: Dad
   CutsceneText:
-  - Hi there Ayyy
-  - lololol
-  - ok by
+  - You dishonoru ouru whole family!!
+  - GET OUTO!
+  - RAITO NAO!!!
   secondCutsceneText: []
   fullLines: []
   displayLine: 
