@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿//Smokebomb by Jordi
+
+using UnityEngine;
 using System.Collections;
 
 public class SmokeBomb : MonoBehaviour

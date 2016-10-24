@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿//Katana script by Jordi
+
+using UnityEngine;
 using System.Collections;
 
 public class Katana : MonoBehaviour
