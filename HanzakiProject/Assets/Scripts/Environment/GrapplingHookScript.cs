@@ -12,6 +12,7 @@ public class GrapplingHookScript : MonoBehaviour
         hook = GameObject.Find("Player").GetComponent<GrapplingHook>();
     }
 
+    //Acivate the hook, focus camera on hook if player is in range.
     void OnTriggerEnter(Collider col)
     {
         if(col.gameObject.tag == "Player" && stats.grapplingHookUnlocked)
@@ -20,7 +21,6 @@ public class GrapplingHookScript : MonoBehaviour
             Camera.main.GetComponent<CameraController>().hookObject = gameObject;
             hook.canHook = true;
             hook.hook = transform;
-
         }
     }
 
