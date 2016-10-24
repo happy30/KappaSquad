@@ -1,23 +1,31 @@
-﻿using UnityEngine;
+﻿// GrapplingHook script by Jordi
+
+using UnityEngine;
 using System.Collections;
 
 public class GrapplingHook : MonoBehaviour {
 
-    public StatsManager stats;
-    public bool canHook;
-    public Transform hook;
-    public float clawSpeed;
 
+    //Components
+    StatsManager stats;
+    public Rigidbody _rb;
+    public Transform hook;
+    
+
+    //Claw and rope
     public GameObject claw;
+    public float clawSpeed;
     GameObject spawnedClaw;
     LineRenderer _line;
     public Vector3[] linePositions;
 
-    public bool grabbing;
-    public float grabTimer;
+    //Timers
+    public bool canHook;
+    bool grabbing;
+    float grabTimer;
     public float hookCooldown;
 
-    public Rigidbody _rb;
+    
     public Transform playerModel;
 
     void Awake()
@@ -29,6 +37,7 @@ public class GrapplingHook : MonoBehaviour {
     }
     void Update ()
     {
+        //Can use hook if it's enabled in statsmanager and hook nearby.
 	    if(stats.grapplingHookUnlocked)
         {
             if(Input.GetKeyDown(InputManager.Hook) && canHook && hookCooldown <= 0)
@@ -78,6 +87,7 @@ public class GrapplingHook : MonoBehaviour {
             hookCooldown -= Time.deltaTime;
         }
 
+        //Move the claw towards the hook, if it hits move the player along.
         if(grabbing)
         {
             spawnedClaw.transform.position = Vector3.MoveTowards(spawnedClaw.transform.position, hook.transform.position, clawSpeed * Time.deltaTime);

@@ -5,9 +5,19 @@ using System.Collections;
 
 public class DontDestroyOnLoad : MonoBehaviour
 {
-	void Awake ()
+    public static DontDestroyOnLoad Instance;
+
+    void Awake ()
     {
-        DontDestroyOnLoad(gameObject);
+        if (Instance)
+        {
+            DestroyImmediate(gameObject);
+        }
+        else
+        {
+            DontDestroyOnLoad(gameObject);
+            Instance = this;
+        }
 	}
 
 }
