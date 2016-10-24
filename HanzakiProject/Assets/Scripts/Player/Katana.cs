@@ -16,6 +16,8 @@ public class Katana : MonoBehaviour
     public GameObject SlashedObject;
 
     public int attackPower = 1;
+    public float dashPower;
+    public float coolDown;
 
     void Awake()
     {
@@ -25,10 +27,16 @@ public class Katana : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKey(InputManager.Slash) && !Camera.main.GetComponent<CameraController>().inCutscene)
+        if (Input.GetKey(InputManager.Slash) && !Camera.main.GetComponent<CameraController>().inCutscene && coolDown <= 0)
         {
             //Animator.playanimation
-            playerController.Dash(5);
+            playerController.Dash(dashPower);
+            coolDown = 0.5f;
+        }
+
+        if(coolDown > 0)
+        {
+            coolDown -= Time.deltaTime;
         }
 
     }
