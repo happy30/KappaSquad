@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 68ce2faac0b4ffb48be46c96be1d7fdd
 timeCreated: 1477395041
+=======
+guid: f827a0912b3b2b240a28527719b69a58
+timeCreated: 1477407302
+>>>>>>> 9c08213f71c3f6612274c290a7ab7891863d882a
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -80,7 +85,11 @@ ModelImporter:
     9500000: //RootNode
     13700000: Kappa
   materials:
+<<<<<<< HEAD
     importMaterials: 0
+=======
+    importMaterials: 1
+>>>>>>> 9c08213f71c3f6612274c290a7ab7891863d882a
     materialName: 0
     materialSearch: 1
   animations:
