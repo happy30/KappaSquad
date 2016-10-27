@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: e83344b8a7b5bb8498dd7b78c6288373
-timeCreated: 1477566180
+guid: 9aaf7eef6f1e03442a853f61cfbca2c3
+timeCreated: 1477572590
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -9,9 +9,10 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: main character
+    4300000: NINJA BLADE
+    9500000: //RootNode
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
   animations:
@@ -68,7 +69,7 @@ ModelImporter:
     rootMotionBoneName: 
     hasTranslationDoF: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

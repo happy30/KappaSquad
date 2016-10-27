@@ -51,7 +51,6 @@ public class PlayerController : MonoBehaviour
         stats = GameObject.Find("GameManager").GetComponent<StatsManager>();
         optionsSettings = GameObject.Find("GameManager").GetComponent<OptionsSettings>();
         playerModel = GameObject.Find("PlayerModel");
-        modelWidth = 1;
     }
 
     //Set the right controls
