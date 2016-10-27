@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: dae189d7b43bd0749aef847fc0c21526
-timeCreated: 1474294987
+guid: 336a49ebecfe1054290a39aa2b8e1a71
+timeCreated: 1474290883
 licenseType: Free
 TrueTypeFontImporter:
   serializedVersion: 4
@@ -10,7 +10,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Zenzai Itachi
+  - LeviReBrushed
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

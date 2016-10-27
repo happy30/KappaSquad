@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: dae189d7b43bd0749aef847fc0c21526
-timeCreated: 1474294987
+guid: cd8e0f1db17f2e14fa089b258a50b9c6
+timeCreated: 1474290736
 licenseType: Free
 TrueTypeFontImporter:
   serializedVersion: 4
@@ -10,7 +10,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Zenzai Itachi
+  - Edo SZ
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

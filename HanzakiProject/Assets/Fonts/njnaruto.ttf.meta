@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: dae189d7b43bd0749aef847fc0c21526
-timeCreated: 1474294987
+guid: 5f03d2e060c1a294a952f2546ab8b1fb
+timeCreated: 1474290907
 licenseType: Free
 TrueTypeFontImporter:
   serializedVersion: 4
@@ -10,7 +10,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Zenzai Itachi
+  - Ninja Naruto
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
