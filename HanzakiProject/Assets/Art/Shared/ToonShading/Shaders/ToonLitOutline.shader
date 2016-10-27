@@ -8,6 +8,7 @@ Shader "Toon/Lit Outline" {
 	}
 
 	SubShader {
+
 		Tags { "RenderType"="Opaque" }
 		UsePass "Toon/Lit/FORWARD"
 		UsePass "Toon/Basic Outline/OUTLINE"

@@ -379,8 +379,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackPower: 1
   projectileSpeed: 15
-  player: {fileID: 0}
+  player: {fileID: 4000010979179118, guid: 720fe15f77b7b204e811a33376149cf5, type: 2}
   model: {fileID: 4000013314846718}
   model2: {fileID: 4000010567602830}
+  hit: 0
   enemy: {fileID: 0}
   shurikenDirection: {x: 0, y: 0, z: 0}

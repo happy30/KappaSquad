@@ -57,6 +57,7 @@ Shader "Toon/Basic Outline" {
 			#pragma vertex vert
 			#pragma fragment frag
 			#pragma multi_compile_fog
+			#pragma target 3.0
 			fixed4 frag(v2f i) : SV_Target
 			{
 				UNITY_APPLY_FOG(i.fogCoord, i.color);

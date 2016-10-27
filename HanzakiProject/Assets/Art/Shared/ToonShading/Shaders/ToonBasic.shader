@@ -8,15 +8,17 @@ Shader "Toon/Basic" {
 
 	SubShader {
 		Tags { "RenderType"="Opaque" }
+
 		Pass {
 			Name "BASE"
 			Cull Off
 			
 			CGPROGRAM
+			
 			#pragma vertex vert
 			#pragma fragment frag
 			#pragma multi_compile_fog
-
+			#pragma target 3.0
 			#include "UnityCG.cginc"
 
 			sampler2D _MainTex;
