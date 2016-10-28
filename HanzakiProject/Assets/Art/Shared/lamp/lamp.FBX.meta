@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 1028dbb4355141c46aa47f8d31a783ab
-timeCreated: 1476441817
+guid: 58d3033ac6a462b42b1a843e4188c077
+timeCreated: 1477650768
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -9,7 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Boss Kappa
+    4300000: lamp
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -35,7 +35,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 2
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
