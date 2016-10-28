@@ -40,7 +40,7 @@ public class EnemyMovement : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
-        //image = healthSprite.GetComponent<Image>();
+        image = healthSprite.GetComponent<Image>();
         for (int i = 0; i < maxWayPoints; i++)
         {
             if (topDownView)
@@ -77,7 +77,8 @@ public class EnemyMovement : MonoBehaviour
     {
         if(currentWayPoint >= wayPoints.Count)
         {
-            ResetPatrol();
+            //ResetPatrol();
+            currentWayPoint = 0;
         }
         agent.SetDestination(wayPoints[currentWayPoint]);
 
@@ -100,20 +101,20 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
-    void ResetPatrol()
+/*void ResetPatrol()
+{
+    currentWayPoint = 0;
+    for (int i = 0; i < wayPoints.Count - 1; i++)
     {
-        currentWayPoint = 0;
-        for (int i = 0; i < wayPoints.Count - 1; i++)
+        if (topDownView) {
+            wayPoints[i] = new Vector3(Random.Range(transform.position.x - rangeOffSet, transform.position.x + rangeOffSet), Random.Range(transform.position.x - rangeOffSet, transform.position.y + rangeOffSet), Random.Range(transform.position.z - rangeOffSet, transform.position.z + rangeOffSet));
+        }
+        else
         {
-            if (topDownView) {
-                wayPoints[i] = new Vector3(Random.Range(transform.position.x - rangeOffSet, transform.position.x + rangeOffSet), Random.Range(transform.position.x - rangeOffSet, transform.position.y + rangeOffSet), Random.Range(transform.position.z - rangeOffSet, transform.position.z + rangeOffSet));
-            }
-            else
-            {
-                wayPoints.Add(new Vector3(Random.Range(transform.position.x - rangeOffSet, transform.position.x + rangeOffSet), transform.position.y, transform.position.z));
-            }
+            wayPoints.Add(new Vector3(Random.Range(transform.position.x - rangeOffSet, transform.position.x + rangeOffSet), transform.position.y, transform.position.z));
         }
     }
+}*/
 
     void Chase()
     {
@@ -153,7 +154,7 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
-    public void GetHit(int damageGet)
+    void GetHit(int damageGet)
     {
         health -= damageGet;
         if (health <= 0)
