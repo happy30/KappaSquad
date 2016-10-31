@@ -994,10 +994,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6da3a81b06e6b3b439c966667d03b240, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainMenuManager: {fileID: 1000010374281032}
-  optionsManagerPanel: {fileID: 1000010612302902}
-  exitGamePanel: {fileID: 1000011484420516}
-  creditsScene: {fileID: 1000013254169546}
+  mainMenuManager: {fileID: 0}
+  optionsManagerPanel: {fileID: 0}
+  exitGamePanel: {fileID: 0}
+  creditsScene: {fileID: 3}
 --- !u!114 &114000010714844932
 MonoBehaviour:
   m_ObjectHideFlags: 1
