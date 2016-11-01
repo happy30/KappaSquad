@@ -46,6 +46,6 @@ public class Shuriken : MonoBehaviour {
     {
         Destroy(spawnedShurikenObject = (GameObject)Instantiate(shurikenObject, transform.position, Quaternion.identity), 3);
         spawnedShurikenObject.GetComponent<ShurikenObject>().attackPower = attackPower;
-        stats.shurikenAmount--;
+        stats.shurikenAmount--;	
     }
 }

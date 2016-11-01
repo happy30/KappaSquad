@@ -46,6 +46,7 @@ public class StatsManager : MonoBehaviour
     {
         shurikenUnlocked = true;
         shurikenAmount++;
+		
     }
 
     public void AddSmokeBomb()
