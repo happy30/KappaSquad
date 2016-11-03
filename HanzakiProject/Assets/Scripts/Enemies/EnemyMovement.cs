@@ -70,7 +70,7 @@ public class EnemyMovement : MonoBehaviour
         agent.SetDestination(wayPoints[currentWayPoint].position);
 
         distance = Vector3.Distance(wayPoints[currentWayPoint].position, transform.position);
-        if(distance < 1)
+        if(distance < 3)
         {
             agent.speed = 0;
             anim.SetFloat("WalkSpeed", 0);
