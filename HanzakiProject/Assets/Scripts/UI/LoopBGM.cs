@@ -20,10 +20,6 @@ public class LoopBGM : MonoBehaviour
     {
         _sound = GetComponent<AudioSource>();
         audioClip = _sound.clip;
-<<<<<<< HEAD
-=======
-        
->>>>>>> 7532bfd8e3dae72c36769fbed74c5b0ebcff8f93
     }
 
     void Update()
