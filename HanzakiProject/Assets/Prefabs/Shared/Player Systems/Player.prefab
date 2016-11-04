@@ -829,7 +829,7 @@ GameObject:
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1368,7 +1368,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013027347028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -30.9, y: 1, z: 1.89}
+  m_LocalPosition: {x: -30.9, y: 1, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -2443,14 +2443,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rb: {fileID: 0}
   hook: {fileID: 0}
-  claw: {fileID: 1000011496644268, guid: c63712b90fb4b144281c23db3ccbf236, type: 2}
+  claw: {fileID: 1000012151424750, guid: f7ac5a139a6cfa44fa101405b4258402, type: 2}
   clawSpeed: 50
   linePositions:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
   canHook: 0
   hookCooldown: 0
-  playerModel: {fileID: 4000013956597130}
+  playerModel: {fileID: 4000010979179118}
 --- !u!114 &114000012478805436
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2585,7 +2585,7 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: 0, y: 0, z: -0.21478462}
+    m_Center: {x: 0, y: 0, z: -0.21478474}
     m_Extent: {x: 0.73023987, y: 1.358626, z: 0.44855368}
   m_DirtyAABB: 0
 --- !u!137 &137000013973175496

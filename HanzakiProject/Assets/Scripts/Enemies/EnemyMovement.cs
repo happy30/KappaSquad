@@ -9,17 +9,16 @@ public class EnemyMovement : MonoBehaviour
     public Transform player;
     NavMeshAgent agent;
 
-    public List<Vector3> wayPoints = new List<Vector3>();
+    public List<Transform> wayPoints = new List<Transform>();
     public float walkSpeed;
     public float runSpeed;
-    public bool topDownView;
 
-    private  int currentWayPoint;
+    public int currentWayPoint;
     public float rangeOffSet;
     public float maxWayPoints;
     private Animator anim;
     public bool isAlive;
-    private float lookOutTimer;
+    public float lookOutTimer;
     public float minLookOutTime;
     public float maxLookOutTime;
 
@@ -35,23 +34,12 @@ public class EnemyMovement : MonoBehaviour
     private Image image;
     public GameObject healthSprite;
     public List<Sprite> spriteArray = new List<Sprite>();
-
+    public float distance;
     void Awake()
     {
         anim = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
         image = healthSprite.GetComponent<Image>();
-        for (int i = 0; i < maxWayPoints; i++)
-        {
-            if (topDownView)
-            {
-                wayPoints.Add(new Vector3(Random.Range(transform.position.x - rangeOffSet, transform.position.x + rangeOffSet), Random.Range(transform.position.x - rangeOffSet, transform.position.y + rangeOffSet), Random.Range(transform.position.z - rangeOffSet, transform.position.z + rangeOffSet)));
-            }
-            else
-            {
-                wayPoints.Add(new Vector3(Random.Range(transform.position.x - rangeOffSet, transform.position.x + rangeOffSet), transform.position.y, transform.position.z));
-            }
-        }
     }
 
     void Update()
@@ -77,13 +65,12 @@ public class EnemyMovement : MonoBehaviour
     {
         if(currentWayPoint >= wayPoints.Count)
         {
-            //ResetPatrol();
             currentWayPoint = 0;
         }
-        agent.SetDestination(wayPoints[currentWayPoint]);
+        agent.SetDestination(wayPoints[currentWayPoint].position);
 
-        float distance = Vector3.Distance(wayPoints[currentWayPoint], transform.position);
-        if(distance < 6)
+        distance = Vector3.Distance(wayPoints[currentWayPoint].position, transform.position);
+        if(distance < 3)
         {
             agent.speed = 0;
             anim.SetFloat("WalkSpeed", 0);
@@ -100,21 +87,6 @@ public class EnemyMovement : MonoBehaviour
             anim.SetFloat("WalkSpeed", agent.speed);
         }
     }
-
-/*void ResetPatrol()
-{
-    currentWayPoint = 0;
-    for (int i = 0; i < wayPoints.Count - 1; i++)
-    {
-        if (topDownView) {
-            wayPoints[i] = new Vector3(Random.Range(transform.position.x - rangeOffSet, transform.position.x + rangeOffSet), Random.Range(transform.position.x - rangeOffSet, transform.position.y + rangeOffSet), Random.Range(transform.position.z - rangeOffSet, transform.position.z + rangeOffSet));
-        }
-        else
-        {
-            wayPoints.Add(new Vector3(Random.Range(transform.position.x - rangeOffSet, transform.position.x + rangeOffSet), transform.position.y, transform.position.z));
-        }
-    }
-}*/
 
     void Chase()
     {

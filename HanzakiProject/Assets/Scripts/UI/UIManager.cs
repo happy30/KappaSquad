@@ -17,6 +17,35 @@ public class UIManager : MonoBehaviour {
     public GameObject npcNameTextObject;
 
     AudioSource _sound;
+	public StatsManager stats;
+	
+	void Awake()
+	{
+		stats = GameObject.Find("GameManager").GetComponent<StatsManager>();
+	}
+	
+	void Update()
+	{
+		
+	}
+	
+	/*public int shurikenAmount;
+	public Sprite locked;
+	public Sprite unlocked;
+	
+	public void Awake () 
+	{
+		
+	
+	}*/
+	
+	
+	//Keeps count of shurikens on screen
+	public void ShurikenCount()
+	{
+		
+		
+	}
 
     //Play the letterbox animation
     public void EnterCutscene()
