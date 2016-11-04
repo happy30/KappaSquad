@@ -24,9 +24,8 @@ public class EnemyMovement : MonoBehaviour
 
     public float attackRange;
     public int attackDamage;
-    private float attackRate;
     public float restartAttack;
-    private float mayAttack;
+    public float mayAttack;
     public RaycastHit hit;
     public float rayDis;
 
@@ -94,7 +93,7 @@ public class EnemyMovement : MonoBehaviour
         anim.SetFloat("WalkSpeed", agent.speed);
         agent.SetDestination(player.position);
         float distance = Vector3.Distance(player.position, transform.position);
-        if(distance < attackRange)
+        if (distance < attackRange)
         {
             Attacking();
         }
@@ -102,10 +101,11 @@ public class EnemyMovement : MonoBehaviour
 
     void Attacking()
     {
-        if (attackRate <= 0)
+        if (mayAttack <= 0)
         {
             anim.SetBool("AttackRange", true);
-            attackRate = restartAttack;
+            agent.speed = 0;
+            mayAttack = restartAttack;
             if(Physics.Raycast(transform.position,transform.forward,out hit, rayDis))
             {
                 if(hit.transform.tag == "Player")
@@ -114,14 +114,13 @@ public class EnemyMovement : MonoBehaviour
                 }
             }
         }
-        else
+       else
         {
-            if (mayAttack < anim.runtimeAnimatorController.animationClips.Length)
-            {
-                anim.SetBool("AttackRange", false);
+            anim.SetBool("AttackRange", false);
+            /*if (mayAttack < anim.runtimeAnimatorController.animationClips.Length)
+            {  
                 mayAttack = anim.runtimeAnimatorController.animationClips.Length + 2;
-            }
-            attackRate -= Time.deltaTime;
+            }*/
             mayAttack -= Time.deltaTime;
         }
     }

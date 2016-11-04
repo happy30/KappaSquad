@@ -43,13 +43,18 @@ public class ShurikenObject : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
-        if(col.gameObject.tag == "Ground" || col.gameObject.tag == "Enemy")
+        if(col.gameObject.tag == "Ground" || col.gameObject.tag == "Enemy" || col.gameObject.tag == "Destructible")
         {
             projectileSpeed = 0;
             transform.SetParent(col.gameObject.transform);
             model2.Rotate(0, 0, 0);
             model.Rotate(0, 0, 0);
             hit = true;
+
+            if(col.gameObject.tag == "Destructible")
+            {
+                col.gameObject.GetComponent<DestructibleScript>().DestroyObject();
+            }
         } 
     }
 }
