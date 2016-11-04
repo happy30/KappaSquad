@@ -1,13 +1,27 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class MainMenuController : MonoBehaviour
 {
     //Scroll texture
     public Texture2D continueUnlockedTexture;
     public Texture2D continueLockedTexture;
+    public Texture2D continueUnlockedTextureAlpha2;
+    public Texture2D continueLockedTextureAlpha2;
     public bool continueUnlocked;
     public Material scrollMaterial;
+
+    public MainMenuScroll scrollScript;
+    public GameObject scroll;
+
+    public RectTransform optionsPanel;
+    public float optionsSlideTime;
+    public float optionsLocationX;
+    public float scrollLocationX;
+    public bool optionsOpen;
+
+    public GameObject blackScreen;
 
     //For the arrow
     public RectTransform[] buttons;
@@ -15,6 +29,11 @@ public class MainMenuController : MonoBehaviour
     public float arrowSpeed;
     public float yPosArrow;
     public bool scrollActivated;
+
+    public bool fadeScreen;
+    public float fadeValue;
+
+    public float cutoutValue;
 
     //Any key
     public GameObject pressAnyKeyObject;
@@ -37,13 +56,17 @@ public class MainMenuController : MonoBehaviour
     void Awake()
     {
         sound = GameObject.Find("MainMenuUISounds").GetComponent<AudioSource>();
+        scrollScript = GameObject.Find("ScrollBottom").GetComponent<MainMenuScroll>();
     }
 	// Use this for initialization
 	void Start ()
     {
         cursorArrow.anchoredPosition = new Vector2(cursorArrow.anchoredPosition.x, buttons[0].anchoredPosition.y);
         cursorArrow.gameObject.SetActive(false);
-        if(continueUnlocked)
+        optionsLocationX = 1920;
+        scrollLocationX = scroll.transform.position.x;
+
+        if (continueUnlocked)
         {
             scrollMaterial.mainTexture = continueUnlockedTexture;
         }
@@ -96,6 +119,41 @@ public class MainMenuController : MonoBehaviour
                 Invoke("ArrowCursorAppear", 2);
             }
         } 
+
+        if(Input.GetKeyDown(InputManager.Slash) && cursorArrow.gameObject.activeSelf)
+        {
+            if(cursorAt == CursorAt.NewGame)
+            {
+                NewGame();
+                Invoke("InitiateFade", 1f);
+                cursorArrow.gameObject.SetActive(false);
+            }
+            else if(cursorAt == CursorAt.Options)
+            {
+                cursorArrow.gameObject.SetActive(false);
+                scroll.transform.GetComponentInChildren<Cloth>().enabled = false;
+                optionsLocationX = 0;
+                scrollLocationX = scrollLocationX - 60f;
+            }
+        }
+
+        if(fadeScreen)
+        {
+            fadeValue += 0.5f * Time.deltaTime;
+            Camera.main.fieldOfView -= fadeValue;
+            blackScreen.GetComponent<Image>().color = new Color(blackScreen.GetComponent<Image>().color.r, blackScreen.GetComponent<Image>().color.g, blackScreen.GetComponent<Image>().color.b, fadeValue / 0.8f);
+        }
+
+        if(Input.GetButtonDown("Cancel"))
+        {
+            if(optionsOpen)
+            {
+                OptionsBack();
+            }
+        }
+
+        optionsPanel.anchoredPosition = Vector3.Lerp(optionsPanel.anchoredPosition, new Vector2(optionsLocationX, optionsPanel.anchoredPosition.y), optionsSlideTime * Time.deltaTime);
+        scroll.transform.position = Vector3.Lerp(scroll.transform.position, new Vector3(scrollLocationX, scroll.transform.position.y, scroll.transform.position.z), optionsSlideTime * Time.deltaTime);
     }
 
     public void SetCursorPosition(int pos, bool goingDown)
@@ -152,4 +210,34 @@ public class MainMenuController : MonoBehaviour
     {
         cursorArrow.gameObject.SetActive(true);
     }
+
+    public void NewGame()
+    {
+        if (continueUnlocked)
+        {
+            
+        }
+        else
+        {
+            scrollScript.scroll.GetComponent<Renderer>().material.mainTexture = continueLockedTextureAlpha2;
+            scrollScript.scrollObject.GetComponent<Animator>().SetBool("BurnScroll", true);
+        }
+    }
+
+    public void OptionsBack()
+    {
+        optionsOpen = false;
+        optionsLocationX = 1920;
+        Invoke("ArrowCursorAppear", 1.2f);
+        scrollLocationX = scrollLocationX + 60f;
+        scroll.transform.GetComponentInChildren<Cloth>().enabled = true;
+    }
+
+
+    public void InitiateFade()
+    {
+        fadeScreen = true;
+    }
+
+
 }

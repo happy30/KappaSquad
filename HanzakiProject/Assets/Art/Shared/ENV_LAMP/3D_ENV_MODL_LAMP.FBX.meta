@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:HanzakiProject/Assets/Art/Shared/lamp/lamp.FBX.meta
+guid: f1970769168a21043a9b1ec2e1957e3f
+=======
 guid: 9f4d87c09becc7345a494c44495b8bd5
+>>>>>>> b2ce756a1bfc38c9d1fe5c724c1372a037f7da39:HanzakiProject/Assets/Art/Shared/ENV_LAMP/3D_ENV_MODL_LAMP.FBX.meta
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:

@@ -15,10 +15,12 @@ public class LoopBGM : MonoBehaviour
     public float loopDuration;
     AudioClip audioClip;
 
+
     void Awake ()
     {
         _sound = GetComponent<AudioSource>();
         audioClip = _sound.clip;
+        _sound.timeSamples = 74 * audioClip.frequency;
     }
 
     void Update()
