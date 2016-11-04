@@ -9,6 +9,10 @@ TagManager:
   - Shuriken
   - Slippery
   - CameraChange
+  - Enemy
+  - EnemyHead
+  - Rock
+  - Destructible
   layers:
   - Default
   - TransparentFX
@@ -18,7 +22,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Destructible
   - 
   - 
   - 
