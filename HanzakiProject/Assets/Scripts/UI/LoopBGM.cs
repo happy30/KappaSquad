@@ -20,7 +20,7 @@ public class LoopBGM : MonoBehaviour
     {
         _sound = GetComponent<AudioSource>();
         audioClip = _sound.clip;
-        _sound.timeSamples = 74 * audioClip.frequency;
+        
     }
 
     void Update()
