@@ -3884,9 +3884,9 @@ CapsuleCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 2
-  m_Height: 30
+  m_Height: 10
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: -9.88, z: 0}
 --- !u!4 &532180615 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4000011569317020, guid: 49a91dd117507a446abe5921dfdd419d,
@@ -12340,6 +12340,7 @@ MonoBehaviour:
   inPuzzle: 0
   followObject: {fileID: 0}
   hookObject: {fileID: 0}
+  cutsceneZ: 0
   cameraRot: {x: 0, y: 0, z: 0}
 --- !u!81 &1741766724
 AudioListener:

@@ -17,6 +17,8 @@ public class CameraController : MonoBehaviour
     public GameObject followObject;
     public GameObject hookObject;
 
+    public float cutsceneZ;
+
     public Vector3 cameraRot;
 
 
@@ -25,6 +27,7 @@ public class CameraController : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        cutsceneZ = transform.position.z - 1f;
 
         followTime = 1.5f;
 
@@ -84,7 +87,7 @@ public class CameraController : MonoBehaviour
             }
             else
             {
-                transform.position = Vector3.Lerp(transform.position, new Vector3(hookObject.transform.position.x, player.transform.position.y + cameraOffsetY, player.transform.position.z - 15f), followTime * Time.deltaTime);
+                transform.position = Vector3.Lerp(transform.position, new Vector3(hookObject.transform.position.x, (hookObject.transform.position.y - player.transform.position.y) / 2  + cameraOffsetY, player.transform.position.z - 15f), followTime * Time.deltaTime);
             }
             
             transform.eulerAngles = Vector3.Lerp(transform.eulerAngles, cameraRot, followTime * Time.deltaTime);
@@ -106,13 +109,12 @@ public class CameraController : MonoBehaviour
     {
         if(playerController.levelType == PlayerController.LevelType.SS)
         {
-            transform.position = Vector3.Lerp(transform.position, new Vector3(followThis.transform.position.x, transform.position.y, -4f), followTime * Time.deltaTime);
+            transform.position = Vector3.Lerp(transform.position, new Vector3(followThis.transform.position.x, transform.position.y, cutsceneZ), followTime * Time.deltaTime);
         }
         else
         {
             transform.eulerAngles = Vector3.Lerp(transform.eulerAngles, new Vector3(30, 0, 0), followTime * Time.deltaTime);
             transform.position = Vector3.Lerp(transform.position, new Vector3(followThis.transform.position.x, followThis.transform.position.y + 5, followThis.transform.position.z -8f), followTime * Time.deltaTime);
-
         }      
     }
 }
