@@ -78,7 +78,6 @@ public class CameraController : MonoBehaviour
         {
             cameraOffsetX = 0;
         }
-
         if(!inPuzzle)
         {
             if(hookObject == null)
@@ -91,7 +90,6 @@ public class CameraController : MonoBehaviour
             }
             
             transform.eulerAngles = Vector3.Lerp(transform.eulerAngles, cameraRot, followTime * Time.deltaTime);
-            
         }
         else
         {

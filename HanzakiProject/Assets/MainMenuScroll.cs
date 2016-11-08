@@ -16,49 +16,46 @@ public class MainMenuScroll : MonoBehaviour {
 
     public GameObject scrollObject;
     public GameObject scroll;
-    
 
-	// Use this for initialization
-	void Awake ()
+    public GameObject optionsScrollObject;
+    public GameObject optionsScroll;
+
+    public bool optionsBack;
+
+
+    // Use this for initialization
+    void Awake ()
     {
         sound = GameObject.Find("MainMenuUISounds").GetComponent<AudioSource>();
         mainMenuController = GameObject.Find("MainMenuCanvas").GetComponent<MainMenuController>();
-        _rb = GetComponent<Rigidbody>();
         cutOffValue = 1;
 	}
-	
-	// Update is called once per frame
-	void Update ()
+
+    // Update is called once per frame
+    void Update()
     {
         if (mainMenuController.scrollActivated)
         {
             scrollObject.GetComponent<Animator>().SetBool("StartScrolling", true);
             scroll.GetComponent<Cloth>().externalAcceleration = new Vector3(10f, 0, 30f);
             Invoke("ResetAcceleration", 1.5f);
-            /*
-            if (cutOffValue > 0)
-            {
-                cutOffValue -= fallSpeed * Time.deltaTime;
-            }
-            if (transform.position.y > -12)
-            {
-                timer += Time.deltaTime;
-                transform.position = new Vector3(transform.position.x, scrollObject.GetComponent<Renderer>().material.GetFloat("_Cutoff") * 23, transform.position.z);
-                scrollObject.GetComponent<Cloth>().externalAcceleration = new Vector3(0.4f, 0, 10);
-            }
-            else
-            {
-                if(!hasPlayedSFX)
-                {
-                    Debug.Log(timer);
-                    sound.PlayOneShot(scrollSound);
-                    hasPlayedSFX = true;
-                    Invoke("ResetAcceleration", 1f);
-                }
-            }
-            */
         }
-	}
+    }
+
+    public void ActvateOptionsScroll()
+    {
+        optionsScrollObject.GetComponent<Animator>().SetBool("StartScrolling", true);
+        optionsScroll.GetComponent<Cloth>().externalAcceleration = new Vector3(10f, 0, 30f);
+        Invoke("OptionsResetAcceleration", 1.5f);
+    }
+
+    public void CloseOptionsScroll()
+    {
+        optionsScrollObject.GetComponent<Animator>().SetBool("StartScrolling", false);
+        optionsScroll.GetComponent<Cloth>().externalAcceleration = new Vector3(10f, 0, 30f);
+        Invoke("OptionsResetAcceleration", 1.5f);
+    }
+
 
     public void ResetAcceleration()
     {
@@ -67,6 +64,26 @@ public class MainMenuScroll : MonoBehaviour {
         {
             sound.PlayOneShot(scrollSound);
             hasPlayedSFX = true;
+        }
+    }
+
+    public void OptionsResetAcceleration()
+    {
+        scroll.GetComponent<Cloth>().externalAcceleration = new Vector3(0.4f, 0, 0.4f);
+        if (!hasPlayedSFX)
+        {
+            sound.PlayOneShot(scrollSound);
+            hasPlayedSFX = true;
+        }
+    }
+    public void OptionsBack()
+    {
+        scroll.GetComponent<Cloth>().externalAcceleration = new Vector3(0.4f, 0, 0.4f);
+        if (!hasPlayedSFX)
+        {
+            sound.PlayOneShot(scrollSound);
+            hasPlayedSFX = true;
+            optionsBack = false;
         }
     }
 }
