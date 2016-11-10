@@ -28,12 +28,16 @@ public class MainMenuController : MonoBehaviour
     public RectTransform cursorArrow;
     public float arrowSpeed;
     public float yPosArrow;
+
     public bool scrollActivated;
+    public bool optionsScrollActivated;
 
     public bool fadeScreen;
     public float fadeValue;
 
     public float cutoutValue;
+
+    public Image[] optionsFadeObjects;
 
     //Any key
     public GameObject pressAnyKeyObject;
@@ -56,7 +60,7 @@ public class MainMenuController : MonoBehaviour
     void Awake()
     {
         sound = GameObject.Find("MainMenuUISounds").GetComponent<AudioSource>();
-        scrollScript = GameObject.Find("ScrollBottom").GetComponent<MainMenuScroll>();
+        scrollScript = GetComponent<MainMenuScroll>();
     }
 	// Use this for initialization
 	void Start ()
@@ -131,9 +135,11 @@ public class MainMenuController : MonoBehaviour
             else if(cursorAt == CursorAt.Options)
             {
                 cursorArrow.gameObject.SetActive(false);
-                scroll.transform.GetComponentInChildren<Cloth>().enabled = false;
-                optionsLocationX = 0;
-                scrollLocationX = scrollLocationX - 60f;
+                //optionsLocationX = 0;
+                //scrollLocationX = scrollLocationX - 60f;
+                GetComponent<MainMenuScroll>().ActvateOptionsScroll();
+                optionsOpen = true;
+                FadeInOptions();
             }
         }
 
@@ -152,7 +158,8 @@ public class MainMenuController : MonoBehaviour
             }
         }
 
-        optionsPanel.anchoredPosition = Vector3.Lerp(optionsPanel.anchoredPosition, new Vector2(optionsLocationX, optionsPanel.anchoredPosition.y), optionsSlideTime * Time.deltaTime);
+        
+
         scroll.transform.position = Vector3.Lerp(scroll.transform.position, new Vector3(scrollLocationX, scroll.transform.position.y, scroll.transform.position.z), optionsSlideTime * Time.deltaTime);
     }
 
@@ -227,10 +234,14 @@ public class MainMenuController : MonoBehaviour
     public void OptionsBack()
     {
         optionsOpen = false;
-        optionsLocationX = 1920;
+        GetComponent<MainMenuScroll>().CloseOptionsScroll();
         Invoke("ArrowCursorAppear", 1.2f);
-        scrollLocationX = scrollLocationX + 60f;
-        scroll.transform.GetComponentInChildren<Cloth>().enabled = true;
+        for (int i = 0; i < optionsFadeObjects.Length; i++)
+        {
+            optionsFadeObjects[i].GetComponent<CanvasRenderer>().SetAlpha(1);
+            optionsFadeObjects[i].CrossFadeAlpha(.1f, 1f, false);
+        }
+
     }
 
 
@@ -239,5 +250,13 @@ public class MainMenuController : MonoBehaviour
         fadeScreen = true;
     }
 
+    public void FadeInOptions()
+    {
+        for (int i = 0; i < optionsFadeObjects.Length; i++)
+        {
+            optionsFadeObjects[i].GetComponent<CanvasRenderer>().SetAlpha(0.1f);
+            optionsFadeObjects[i].CrossFadeAlpha(1f, .1f, false);
+        }
+    }
 
 }
