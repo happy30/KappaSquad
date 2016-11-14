@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿//MainMenuScroll by Jordi
+
+using UnityEngine;
 using System.Collections;
 
 public class MainMenuScroll : MonoBehaviour {
