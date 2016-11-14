@@ -1733,7 +1733,7 @@ ParticleSystemRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: 915efc05b148d6c4c9936c879a48ae56, type: 2}
+  - {fileID: 2100000, guid: a4fd78777dd9cd14e91740a5c0b303da, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
