@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿//Cutscene Controller by Jordi
+
+using UnityEngine;
 using System.Collections;
 
 public class CutsceneController : MonoBehaviour

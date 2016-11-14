@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿//Main menu by Arne & Jordi
+
+using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 

@@ -369,6 +369,7 @@ public class PlayerController : MonoBehaviour
         if(!invulnerable)
         {
             stats.health -= damage;
+            GameObject.Find("Canvas").GetComponent<HeartScript>().DrawHearts();
             //knockback maybe.
         }
     }

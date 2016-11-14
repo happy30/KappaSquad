@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿//InputManager by Jordi
+
+using UnityEngine;
 using System.Collections;
 
 public class InputManager : MonoBehaviour
