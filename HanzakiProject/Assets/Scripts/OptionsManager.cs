@@ -29,6 +29,7 @@ public class OptionsManager : MonoBehaviour
 
     public RectTransform[] cursorPositions;
     public GameObject checkmark;
+    public bool cursorCantMove;
 
     public enum CursorPositions
     {
@@ -136,7 +137,7 @@ public class OptionsManager : MonoBehaviour
         }
         cursorArrow.GetComponent<RectTransform>().anchoredPosition = Vector2.Lerp(cursorArrow.GetComponent<RectTransform>().anchoredPosition, new Vector2(cursorPositions[(int)cursorPos].anchoredPosition.x, cursorPositions[(int)cursorPos].anchoredPosition.y), cursorArrowSpeed * Time.deltaTime);
 
-        if(Input.GetKeyDown(KeyCode.DownArrow))
+        if(Input.GetKeyDown(KeyCode.DownArrow)  && !cursorCantMove)
         {
             if((int)cursorPos < 9)
             {
@@ -151,7 +152,7 @@ public class OptionsManager : MonoBehaviour
                 
             }
         }
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.UpArrow) && !cursorCantMove)
         {
             if ((int)cursorPos > 0)
             {
@@ -169,14 +170,14 @@ public class OptionsManager : MonoBehaviour
                 }
             }
         }
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKeyDown(KeyCode.RightArrow) && !cursorCantMove)
         {
             if ((int)cursorPos < 4)
             {
                 cursorPos += 4;
             }
         }
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if (Input.GetKeyDown(KeyCode.LeftArrow) && !cursorCantMove)
         {
             if ((int)cursorPos > 3 && (int)cursorPos < 8)
             {
@@ -280,6 +281,11 @@ public class OptionsManager : MonoBehaviour
         {
             checkmark.GetComponent<Image>().enabled = true;
         }
+    }
+
+    public void EditSlider()
+    {
+        
     }
 
 
