@@ -48,5 +48,14 @@ public class InputManager : MonoBehaviour
 
         instance = this;
     }
+
+    public static void SaveKeys()
+    {
+        PlayerPrefs.SetString("keya", Slash.ToString());
+        PlayerPrefs.SetString("keyb", Shuriken.ToString());
+        PlayerPrefs.SetString("keyc", Hook.ToString());
+        PlayerPrefs.SetString("keyd", SmokeBomb.ToString());
+        PlayerPrefs.SetString("keyspace", JumpTD.ToString());
+    }
 }
 

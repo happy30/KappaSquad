@@ -368,7 +368,7 @@ public class PlayerController : MonoBehaviour
     {
         if(!invulnerable)
         {
-            stats.health--;
+            stats.health -= damage;
             //knockback maybe.
         }
     }
