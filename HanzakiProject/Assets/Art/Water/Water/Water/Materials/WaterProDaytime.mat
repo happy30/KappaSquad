@@ -162,10 +162,10 @@ Material:
       second: 0.02
     - first:
         name: _ReflDistort
-      second: 0.33
+      second: 0.1
     - first:
         name: _RefrDistort
-      second: 0.57
+      second: 0.1
     - first:
         name: _Shininess
       second: 200
@@ -183,7 +183,7 @@ Material:
       second: 0
     - first:
         name: _WaveScale
-      second: 0.15
+      second: 0.02
     - first:
         name: _ZWrite
       second: 1
