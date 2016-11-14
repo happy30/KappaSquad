@@ -465,7 +465,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4000010979179118, guid: 720fe15f77b7b204e811a33376149cf5, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -17.8
+      value: 33.8
       objectReference: {fileID: 0}
     - target: {fileID: 4000010979179118, guid: 720fe15f77b7b204e811a33376149cf5, type: 2}
       propertyPath: m_LocalPosition.y
@@ -508,12 +508,17 @@ Prefab:
     - target: {fileID: 137000012463148866, guid: 720fe15f77b7b204e811a33376149cf5,
         type: 2}
       propertyPath: m_AABB.m_Extent.x
-      value: 0.7302418
+      value: 0.73023987
       objectReference: {fileID: 0}
     - target: {fileID: 54000011197179632, guid: 720fe15f77b7b204e811a33376149cf5,
         type: 2}
       propertyPath: m_Constraints
       value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 137000012463148866, guid: 720fe15f77b7b204e811a33376149cf5,
+        type: 2}
+      propertyPath: m_AABB.m_Center.x
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 720fe15f77b7b204e811a33376149cf5, type: 2}
@@ -4808,11 +4813,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 766752520}
   m_Mesh: {fileID: 4300100, guid: 0ae7711f8f097004da7617bf96ba338c, type: 3}
---- !u!1 &771809407 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1000014115655136, guid: 1ff894db8538b094a8f4af5eb4be67be,
-    type: 2}
-  m_PrefabInternal: {fileID: 435981300}
 --- !u!4 &771809408 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4000013741074822, guid: 1ff894db8538b094a8f4af5eb4be67be,
@@ -7699,7 +7699,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d650620e7329be4091229710ab43ee5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particleObject: {fileID: 771809407}
+  particleObject: {fileID: 1000010726769364, guid: d7a6a1ad3d62a3d468a8909921f9e4db,
+    type: 2}
 --- !u!65 &1119764429
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12409,7 +12410,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1741766722}
   m_LocalRotation: {x: 0.01745245, y: 0, z: 0, w: 0.99984777}
-  m_LocalPosition: {x: -17.52, y: 2.54, z: -128.2}
+  m_LocalPosition: {x: 34.1, y: 2.54, z: -128.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 2, y: 0, z: 0}
   m_Children: []
