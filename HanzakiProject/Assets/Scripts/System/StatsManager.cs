@@ -32,6 +32,7 @@ public class StatsManager : MonoBehaviour
         if(hookParts >= 2)
         {
             grapplingHookUnlocked = true;
+            GameObject.Find("Canvas").GetComponent<UIManager>().UnlockIcons();
         }
     }
 
@@ -48,6 +49,8 @@ public class StatsManager : MonoBehaviour
     {
         shurikenUnlocked = true;
         shurikenAmount++;
+        GameObject.Find("Canvas").GetComponent<UIManager>().UnlockIcons();
+        
 		
     }
 
@@ -55,11 +58,13 @@ public class StatsManager : MonoBehaviour
     {
         smokeBombUnlocked = true;
         smokeBombAmount++;
+        GameObject.Find("Canvas").GetComponent<UIManager>().UnlockIcons();
     }
 
     public void AddKatana()
     {
         katanaUnlocked = true;
         GameObject.Find("Katana").GetComponent<Katana>().UpgradeWeapon();
+        GameObject.Find("Canvas").GetComponent<UIManager>().UnlockIcons();
     }
 }

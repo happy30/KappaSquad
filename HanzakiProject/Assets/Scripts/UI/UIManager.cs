@@ -18,17 +18,38 @@ public class UIManager : MonoBehaviour {
 
     AudioSource _sound;
 	public StatsManager stats;
+
+    public Text shurikenAmountText;
+    public Text smokeBombAmountText;
+    public GameObject shurikenAmountCircle;
+    public GameObject smokeBombAmountCircle;
+
+    public GameObject shurikenHotkeyObject;
+    public GameObject grapplingHookHotkeyObject;
+    public GameObject smokeBombHotkeyObject;
+
+    public GameObject slashIcon;
+    public GameObject shurikenIcon;
+    public GameObject grapplingHookIcon;
+    public GameObject smokeBombIcon;
+    public GameObject dashIcon;
+
+    public GameObject[] lockedIcons;
 	
 	void Awake()
 	{
 		stats = GameObject.Find("GameManager").GetComponent<StatsManager>();
 	}
-	
-	void Update()
-	{
-		
-	}
-	
+
+    void Start()
+    {
+        UnlockIcons();
+    }
+
+    void Update()
+    {
+        CountConsumeables();
+    }
 	/*public int shurikenAmount;
 	public Sprite locked;
 	public Sprite unlocked;
@@ -41,9 +62,18 @@ public class UIManager : MonoBehaviour {
 	
 	
 	//Keeps count of shurikens on screen
-	public void ShurikenCount()
+	void CountConsumeables()
 	{
-		
+        if(shurikenAmountCircle.activeSelf)
+        {
+            shurikenAmountText.text = stats.shurikenAmount.ToString();
+        }
+        
+        if(smokeBombAmountCircle.activeSelf)
+        {
+            smokeBombAmountText.text = stats.smokeBombAmount.ToString();
+        }
+        
 		
 	}
 
@@ -92,4 +122,30 @@ public class UIManager : MonoBehaviour {
         //interactText.text = "";
         interactTextObject.GetComponent<Animator>().SetBool("FadeIn", false);
     }
+
+    public void UnlockIcons()
+    {
+        if (stats.katanaUnlocked)
+        {
+            
+        }
+        if (stats.shurikenUnlocked)
+        {
+            lockedIcons[0].SetActive(false);
+            shurikenAmountCircle.SetActive(true);
+            shurikenHotkeyObject.SetActive(true);
+        }
+        if (stats.grapplingHookUnlocked)
+        {
+            lockedIcons[1].SetActive(false);
+            grapplingHookHotkeyObject.SetActive(true);
+        }
+        if (stats.smokeBombUnlocked)
+        {
+            smokeBombAmountCircle.SetActive(true);
+            lockedIcons[2].SetActive(false);
+            smokeBombHotkeyObject.SetActive(true);
+        }
+    }
+
 }
