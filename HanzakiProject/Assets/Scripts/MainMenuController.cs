@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿//Main menu by Arne & Jordi
+
+using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 
@@ -37,7 +39,7 @@ public class MainMenuController : MonoBehaviour
 
     public float cutoutValue;
 
-    public Image[] optionsFadeObjects;
+    public GameObject options;
 
     //Any key
     public GameObject pressAnyKeyObject;
@@ -139,7 +141,7 @@ public class MainMenuController : MonoBehaviour
                 //scrollLocationX = scrollLocationX - 60f;
                 GetComponent<MainMenuScroll>().ActvateOptionsScroll();
                 optionsOpen = true;
-                FadeInOptions();
+                Invoke("OpenOptions", 1f);
             }
         }
 
@@ -148,14 +150,6 @@ public class MainMenuController : MonoBehaviour
             fadeValue += 0.5f * Time.deltaTime;
             Camera.main.fieldOfView -= fadeValue;
             blackScreen.GetComponent<Image>().color = new Color(blackScreen.GetComponent<Image>().color.r, blackScreen.GetComponent<Image>().color.g, blackScreen.GetComponent<Image>().color.b, fadeValue / 0.8f);
-        }
-
-        if(Input.GetButtonDown("Cancel"))
-        {
-            if(optionsOpen)
-            {
-                OptionsBack();
-            }
         }
 
         
@@ -236,27 +230,18 @@ public class MainMenuController : MonoBehaviour
         optionsOpen = false;
         GetComponent<MainMenuScroll>().CloseOptionsScroll();
         Invoke("ArrowCursorAppear", 1.2f);
-        for (int i = 0; i < optionsFadeObjects.Length; i++)
-        {
-            optionsFadeObjects[i].GetComponent<CanvasRenderer>().SetAlpha(1);
-            optionsFadeObjects[i].CrossFadeAlpha(.1f, 1f, false);
-        }
-
     }
 
+    public void OpenOptions()
+    {
+        options.SetActive(true);
+        options.GetComponent<OptionsManager>().SetKeybindingsText();
+    }
 
     public void InitiateFade()
     {
         fadeScreen = true;
     }
 
-    public void FadeInOptions()
-    {
-        for (int i = 0; i < optionsFadeObjects.Length; i++)
-        {
-            optionsFadeObjects[i].GetComponent<CanvasRenderer>().SetAlpha(0.1f);
-            optionsFadeObjects[i].CrossFadeAlpha(1f, .1f, false);
-        }
-    }
 
 }

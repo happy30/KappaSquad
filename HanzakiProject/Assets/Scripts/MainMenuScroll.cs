@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿//MainMenuScroll by Jordi
+
+using UnityEngine;
 using System.Collections;
 
 public class MainMenuScroll : MonoBehaviour {
@@ -45,14 +47,14 @@ public class MainMenuScroll : MonoBehaviour {
     public void ActvateOptionsScroll()
     {
         optionsScrollObject.GetComponent<Animator>().SetBool("StartScrolling", true);
-        optionsScroll.GetComponent<Cloth>().externalAcceleration = new Vector3(10f, 0, 30f);
+
         Invoke("OptionsResetAcceleration", 1.5f);
     }
 
     public void CloseOptionsScroll()
     {
         optionsScrollObject.GetComponent<Animator>().SetBool("StartScrolling", false);
-        optionsScroll.GetComponent<Cloth>().externalAcceleration = new Vector3(10f, 0, 30f);
+
         Invoke("OptionsResetAcceleration", 1.5f);
     }
 

@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿//InputManager by Jordi
+
+using UnityEngine;
 using System.Collections;
 
 public class InputManager : MonoBehaviour
@@ -47,6 +49,15 @@ public class InputManager : MonoBehaviour
         }
 
         instance = this;
+    }
+
+    public static void SaveKeys()
+    {
+        PlayerPrefs.SetString("keya", Slash.ToString());
+        PlayerPrefs.SetString("keyb", Shuriken.ToString());
+        PlayerPrefs.SetString("keyc", Hook.ToString());
+        PlayerPrefs.SetString("keyd", SmokeBomb.ToString());
+        PlayerPrefs.SetString("keyspace", JumpTD.ToString());
     }
 }
 

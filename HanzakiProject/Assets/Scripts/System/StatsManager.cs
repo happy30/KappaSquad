@@ -21,8 +21,9 @@ public class StatsManager : MonoBehaviour
 
     public void GetLife()
     {
-        maxHealth++;
+        maxHealth += 2;
         health++;
+        GameObject.Find("Canvas").GetComponent<HeartScript>().DrawHearts();
     }
 
     public void AddHookPart()
@@ -39,6 +40,7 @@ public class StatsManager : MonoBehaviour
         if(health < maxHealth)
         {
             health++;
+            GameObject.Find("Canvas").GetComponent<HeartScript>().DrawHearts();
         }
     }
 

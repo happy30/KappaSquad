@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:HanzakiProject/Assets/Art/Shared/CHAR_MAIN/Materials/09 - Default.mat.meta
 guid: 9013e78c4d3423d4cb62b15e37d269a5
 timeCreated: 1478782366
+=======
+guid: d7a6a1ad3d62a3d468a8909921f9e4db
+timeCreated: 1478274293
+>>>>>>> 0b3dba5b384a2720dd3fb126c5730ec998bd0002:HanzakiProject/Assets/Particles/Particle System.prefab.meta
 licenseType: Free
 NativeFormatImporter:
   userData: 
