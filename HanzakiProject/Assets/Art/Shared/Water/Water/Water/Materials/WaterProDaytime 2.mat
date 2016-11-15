@@ -6,9 +6,9 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: 2D_MAT_ENV_WTR 1
+  m_Name: WaterProDaytime 2
   m_Shader: {fileID: 4800000, guid: 1cac2e0bcc34e4b3cbb4bd85982eba83, type: 3}
-  m_ShaderKeywords: _ALPHAPREMULTIPLY_ON _EMISSION _NORMALMAP _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
+  m_ShaderKeywords: _EMISSION _NORMALMAP
   m_LightmapFlags: 1
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -18,7 +18,7 @@ Material:
     - first:
         name: _BumpMap
       second:
-        m_Texture: {fileID: 2800000, guid: 2dd3788f8589b40bf82a92d76ffc5091, type: 3}
+        m_Texture: {fileID: 2800000, guid: 3dd205988bb158b47bf24c93217cef72, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
@@ -49,7 +49,7 @@ Material:
         name: _EmissionMap
       second:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 50, y: 50}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
         name: _Fresnel
@@ -60,8 +60,8 @@ Material:
     - first:
         name: _MainTex
       second:
-        m_Texture: {fileID: 2800000, guid: b9dbf8a74fb2cc5468d62d02f7fd7b05, type: 3}
-        m_Scale: {x: 30, y: 30}
+        m_Texture: {fileID: 2800000, guid: d61892bd671607f46a807741ca561a29, type: 3}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
         name: _MetallicGlossMap
@@ -85,7 +85,7 @@ Material:
         name: _Ramp
       second:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 0}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
         name: _ReflectionTex
@@ -129,7 +129,7 @@ Material:
       second: 1
     - first:
         name: _DstBlend
-      second: 10
+      second: 0
     - first:
         name: _FresnelScale
       second: 0.75
@@ -138,10 +138,10 @@ Material:
       second: 1
     - first:
         name: _GlossMapScale
-      second: 0.9
+      second: 1
     - first:
         name: _Glossiness
-      second: 0.75
+      second: 0.5
     - first:
         name: _GlossyReflections
       second: 1
@@ -150,7 +150,7 @@ Material:
       second: 0
     - first:
         name: _Mode
-      second: 3
+      second: 0
     - first:
         name: _OcclusionStrength
       second: 1
@@ -162,16 +162,16 @@ Material:
       second: 0.02
     - first:
         name: _ReflDistort
-      second: 0.44
+      second: 0.5
     - first:
         name: _RefrDistort
-      second: 0.4
+      second: 0.5
     - first:
         name: _Shininess
       second: 200
     - first:
         name: _SmoothnessTextureChannel
-      second: 1
+      second: 0
     - first:
         name: _SpecularHighlights
       second: 1
@@ -183,14 +183,14 @@ Material:
       second: 0
     - first:
         name: _WaveScale
-      second: 0.15
+      second: 0.05
     - first:
         name: _ZWrite
-      second: 0
+      second: 1
     m_Colors:
     - first:
         name: WaveSpeed
-      second: {r: 9, g: 4.5, b: -8, a: -3.5}
+      second: {r: 0, g: -100, b: 0, a: -50}
     - first:
         name: _AnimationDirection
       second: {r: 1, g: 1, b: 1, a: 1}
@@ -211,7 +211,7 @@ Material:
       second: {r: 1, g: 1, b: -2, a: 3}
     - first:
         name: _Color
-      second: {r: 1, g: 1, b: 1, a: 0.39215687}
+      second: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - first:
         name: _DistortParams
       second: {r: 1, g: 1, b: 2, a: 1.15}
@@ -268,7 +268,7 @@ Material:
       second: {r: 1, g: 1, b: 0, a: 0}
     - first:
         name: _RefrColor
-      second: {r: 0.728, g: 0.922, b: 1, a: 1}
+      second: {r: 0.86764705, g: 0.8795132, b: 1, a: 1}
     - first:
         name: _RefractionTex_ST
       second: {r: 1, g: 1, b: 0, a: 0}
