@@ -268,7 +268,7 @@ Material:
       second: {r: 1, g: 1, b: 0, a: 0}
     - first:
         name: _RefrColor
-      second: {r: 0.86764705, g: 0.8795132, b: 1, a: 1}
+      second: {r: 0.6156863, g: 0.64705884, b: 0.7058824, a: 1}
     - first:
         name: _RefractionTex_ST
       second: {r: 1, g: 1, b: 0, a: 0}
