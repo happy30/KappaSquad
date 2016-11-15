@@ -481,21 +481,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 137000012463148866, guid: 720fe15f77b7b204e811a33376149cf5,
-        type: 2}
-      propertyPath: m_AABB.m_Center.z
-      value: -0.21478271
-      objectReference: {fileID: 0}
-    - target: {fileID: 137000012463148866, guid: 720fe15f77b7b204e811a33376149cf5,
-        type: 2}
-      propertyPath: m_AABB.m_Extent.z
-      value: 0.44854724
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000014240909074, guid: 720fe15f77b7b204e811a33376149cf5,
-        type: 2}
-      propertyPath: levelType
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 720fe15f77b7b204e811a33376149cf5, type: 2}
   m_IsPrefabParent: 0
@@ -560,6 +545,14 @@ Prefab:
         type: 2}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011178300520, guid: 9e48607afb798224aa5e3a4c74b9cb16, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013919100286, guid: 9e48607afb798224aa5e3a4c74b9cb16, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9e48607afb798224aa5e3a4c74b9cb16, type: 2}

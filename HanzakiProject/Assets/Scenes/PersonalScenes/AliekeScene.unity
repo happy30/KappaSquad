@@ -961,11 +961,6 @@ Prefab:
       propertyPath: wayPoints.Array.data[1]
       value: 
       objectReference: {fileID: 806848914}
-    - target: {fileID: 114000012317698052, guid: 1867a6b91ad51eb47a20f2106261689b,
-        type: 2}
-      propertyPath: testFloat
-      value: 4
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1867a6b91ad51eb47a20f2106261689b, type: 2}
   m_IsPrefabParent: 0

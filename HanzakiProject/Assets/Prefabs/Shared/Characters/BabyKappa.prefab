@@ -2256,14 +2256,17 @@ MonoBehaviour:
   rangeOffSet: 15
   maxWayPoints: 3
   isAlive: 1
+  isChasing: 0
   lookOutTimer: 0
   minLookOutTime: 0
   maxLookOutTime: 4
   attackRange: 3
   attackDamage: 0
   restartAttack: 2
+  testFloat: 4
   mayAttack: 0
   rayDis: 2
+  outOfRange: 8
   health: 6
   healthSprite: {fileID: 1000011496644268, guid: c63712b90fb4b144281c23db3ccbf236,
     type: 2}

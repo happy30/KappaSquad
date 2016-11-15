@@ -8,6 +8,8 @@ public class EnemyMovement : MonoBehaviour
 {
     public Transform player;
     NavMeshAgent agent;
+    enum States {Idle, Patrol, Chasing, Attacking}
+    States enemyStates;
 
     public List<Transform> wayPoints = new List<Transform>();
     public float walkSpeed;
@@ -30,6 +32,7 @@ public class EnemyMovement : MonoBehaviour
     public float mayAttack;
     public RaycastHit hit;
     public float rayDis;
+    public float outOfRange;
 
     public int health;
     private Image image;
@@ -38,7 +41,8 @@ public class EnemyMovement : MonoBehaviour
     public float distance;
 
     void Awake()
-    { 
+    {
+        enemyStates = States.Patrol;
         anim = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
         image = healthSprite.GetComponent<Image>();
@@ -46,7 +50,39 @@ public class EnemyMovement : MonoBehaviour
 
     void Update()
     {
-        if (isAlive)
+        switch (enemyStates)
+        {
+            case States.Idle:
+                agent.speed = 0;
+                anim.SetBool("Walking", false);
+                anim.SetBool("Idle", true);
+                Idle();
+                break;
+            case States.Patrol:
+                agent.speed = walkSpeed;
+                anim.SetBool("Idle", false);
+                anim.SetBool("Walking", true);
+                Patrol();
+                break;
+            case States.Chasing:
+                anim.SetBool("Idle", false);
+                anim.SetBool("Walking", true);
+                agent.speed = runSpeed;
+                Chase();
+                break;
+            case States.Attacking:
+                anim.SetBool("Attacking", true);
+                agent.speed = 0;
+                Attacking();
+                break;
+        }
+        if (gameObject.GetComponent<EnemySight>().playerInView == true)
+        {
+            enemyStates = States.Chasing;
+        }
+
+
+        /*if (isAlive)
         {
             if (gameObject.GetComponent<EnemySight>().playerInView == true)
             {
@@ -64,7 +100,7 @@ public class EnemyMovement : MonoBehaviour
         if (isChasing)
         {
             Chase();
-        }
+        }*/
     }
 
     void Patrol()
@@ -78,38 +114,41 @@ public class EnemyMovement : MonoBehaviour
         distance = Vector3.Distance(wayPoints[currentWayPoint].position, transform.position);
         if(distance < 3)
         {
-            agent.speed = 0;
-            anim.SetFloat("WalkSpeed", 0);
-            lookOutTimer -= Time.deltaTime;
-            if (lookOutTimer <= 0)
-            {
-                currentWayPoint++;
-                lookOutTimer = Random.Range(minLookOutTime, maxLookOutTime);
-            }
+            enemyStates = States.Idle;
         }
         else
         {
-            agent.speed = walkSpeed;
-            anim.SetFloat("WalkSpeed", agent.speed);
+            enemyStates = States.Patrol;               
+        }
+    }
+
+    void Idle()
+    {
+        lookOutTimer -= Time.deltaTime;
+        if (lookOutTimer <= 0)
+        {
+            enemyStates = States.Patrol;
+            currentWayPoint++;
+            lookOutTimer = Random.Range(minLookOutTime, maxLookOutTime);
         }
     }
 
     void Chase()
     {
-        agent.speed = runSpeed;
-        anim.SetFloat("WalkSpeed", agent.speed);
         agent.SetDestination(player.position);
         float distance = Vector3.Distance(player.position, transform.position);
+        if (distance > outOfRange)
+        {
+            enemyStates = States.Patrol;
+        }
+
         if (distance < attackRange)
         {
-            Attacking();
+            enemyStates = States.Attacking;
         }
         else
         {
             mayAttack = restartAttack;
-            anim.SetBool("AttackRange", false);
-            agent.speed = walkSpeed;
-            anim.SetFloat("WalkSpeed", walkSpeed);
             isChasing = false;
         }
     }
@@ -118,14 +157,7 @@ public class EnemyMovement : MonoBehaviour
     {
         if (mayAttack <= 0)
         {
-            anim.SetBool("AttackRange", true);
-            agent.speed = 0;
 
-            float distance = Vector3.Distance(player.position, transform.position);
-            if (distance > attackRange)
-            {
-             
-            }
         }
         else
         {
