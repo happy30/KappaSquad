@@ -18,6 +18,7 @@ public class EnemyMovement : MonoBehaviour
     public float maxWayPoints;
     private Animator anim;
     public bool isAlive;
+    public bool isChasing;
     public float lookOutTimer;
     public float minLookOutTime;
     public float maxLookOutTime;
@@ -25,6 +26,7 @@ public class EnemyMovement : MonoBehaviour
     public float attackRange;
     public int attackDamage;
     public float restartAttack;
+    public float testFloat;
     public float mayAttack;
     public RaycastHit hit;
     public float rayDis;
@@ -34,8 +36,9 @@ public class EnemyMovement : MonoBehaviour
     public GameObject healthSprite;
     public List<Sprite> spriteArray = new List<Sprite>();
     public float distance;
+
     void Awake()
-    {
+    { 
         anim = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
         image = healthSprite.GetComponent<Image>();
@@ -45,9 +48,9 @@ public class EnemyMovement : MonoBehaviour
     {
         if (isAlive)
         {
-            if (gameObject.GetComponent<EnemySight>().playerInView == true && isAlive)
+            if (gameObject.GetComponent<EnemySight>().playerInView == true)
             {
-                Chase();
+                isChasing = true;
             }
             else
             {
@@ -57,6 +60,10 @@ public class EnemyMovement : MonoBehaviour
         else
         {
             agent.speed = 0;
+        }
+        if (isChasing)
+        {
+            Chase();
         }
     }
 
@@ -97,6 +104,14 @@ public class EnemyMovement : MonoBehaviour
         {
             Attacking();
         }
+        else
+        {
+            mayAttack = restartAttack;
+            anim.SetBool("AttackRange", false);
+            agent.speed = walkSpeed;
+            anim.SetFloat("WalkSpeed", walkSpeed);
+            isChasing = false;
+        }
     }
 
     void Attacking()
@@ -105,24 +120,26 @@ public class EnemyMovement : MonoBehaviour
         {
             anim.SetBool("AttackRange", true);
             agent.speed = 0;
-            mayAttack = restartAttack;
-            if(Physics.Raycast(transform.position,transform.forward,out hit, rayDis))
+
+            float distance = Vector3.Distance(player.position, transform.position);
+            if (distance > attackRange)
             {
-                if(hit.transform.tag == "Player")
-                {
-                    //  hit.transform.GetComponent<PlayerStats>().GetHit(attackDamage);
-                }
+             
             }
         }
-       else
+        else
         {
-            anim.SetBool("AttackRange", false);
-            /*if (mayAttack < anim.runtimeAnimatorController.animationClips.Length)
-            {  
-                mayAttack = anim.runtimeAnimatorController.animationClips.Length + 2;
-            }*/
             mayAttack -= Time.deltaTime;
         }
+        if (Physics.Raycast(transform.position, transform.forward, out hit, rayDis))
+        {
+            if (hit.transform.tag == "Player")
+            {
+                hit.transform.GetComponent<PlayerController>().GetHit(attackDamage);
+            }
+
+        }
+
     }
 
     void GetHit(int damageGet)
