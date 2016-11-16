@@ -2260,7 +2260,7 @@ MonoBehaviour:
   lookOutTimer: 0
   minLookOutTime: 0
   maxLookOutTime: 4
-  attackRange: 3
+  attackRange: 5
   attackDamage: 0
   restartAttack: 2
   testFloat: 4

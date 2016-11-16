@@ -39,6 +39,7 @@ public class EnemyMovement : MonoBehaviour
     public GameObject healthSprite;
     public List<Sprite> spriteArray = new List<Sprite>();
     public float distance;
+    public float playerDistance;
 
     void Awake()
     {
@@ -50,57 +51,41 @@ public class EnemyMovement : MonoBehaviour
 
     void Update()
     {
+        print(enemyStates);
         switch (enemyStates)
         {
             case States.Idle:
                 agent.speed = 0;
+                anim.SetBool("Attacking", false);
                 anim.SetBool("Walking", false);
                 anim.SetBool("Idle", true);
                 Idle();
                 break;
             case States.Patrol:
                 agent.speed = walkSpeed;
+                anim.SetBool("Attacking", false);
                 anim.SetBool("Idle", false);
                 anim.SetBool("Walking", true);
                 Patrol();
                 break;
             case States.Chasing:
+                anim.SetBool("Attacking", false);
                 anim.SetBool("Idle", false);
                 anim.SetBool("Walking", true);
                 agent.speed = runSpeed;
                 Chase();
                 break;
-            case States.Attacking:
+            case States.Attacking:              
                 anim.SetBool("Attacking", true);
                 agent.speed = 0;
                 Attacking();
                 break;
         }
-        if (gameObject.GetComponent<EnemySight>().playerInView == true)
+        playerDistance = Vector3.Distance(player.position, transform.position);
+        if (gameObject.GetComponent<EnemySight>().playerInView == true && playerDistance < outOfRange)
         {
             enemyStates = States.Chasing;
         }
-
-
-        /*if (isAlive)
-        {
-            if (gameObject.GetComponent<EnemySight>().playerInView == true)
-            {
-                isChasing = true;
-            }
-            else
-            {
-                Patrol();
-            }
-        }
-        else
-        {
-            agent.speed = 0;
-        }
-        if (isChasing)
-        {
-            Chase();
-        }*/
     }
 
     void Patrol()
@@ -110,7 +95,6 @@ public class EnemyMovement : MonoBehaviour
             currentWayPoint = 0;
         }
         agent.SetDestination(wayPoints[currentWayPoint].position);
-
         distance = Vector3.Distance(wayPoints[currentWayPoint].position, transform.position);
         if(distance < 3)
         {
@@ -136,13 +120,12 @@ public class EnemyMovement : MonoBehaviour
     void Chase()
     {
         agent.SetDestination(player.position);
-        float distance = Vector3.Distance(player.position, transform.position);
-        if (distance > outOfRange)
+        if (playerDistance > outOfRange)
         {
             enemyStates = States.Patrol;
         }
 
-        if (distance < attackRange)
+        if (playerDistance < attackRange)
         {
             enemyStates = States.Attacking;
         }
@@ -155,23 +138,17 @@ public class EnemyMovement : MonoBehaviour
 
     void Attacking()
     {
-        if (mayAttack <= 0)
-        {
-
-        }
-        else
-        {
-            mayAttack -= Time.deltaTime;
-        }
         if (Physics.Raycast(transform.position, transform.forward, out hit, rayDis))
         {
             if (hit.transform.tag == "Player")
             {
                 hit.transform.GetComponent<PlayerController>().GetHit(attackDamage);
             }
-
         }
-
+        if(distance > attackRange)
+        {
+            enemyStates = States.Chasing;
+        }
     }
 
     void GetHit(int damageGet)
