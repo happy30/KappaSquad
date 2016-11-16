@@ -40,6 +40,7 @@ public class MainMenuController : MonoBehaviour
     public float cutoutValue;
 
     public GameObject options;
+    public LoadController _load;
 
     //Any key
     public GameObject pressAnyKeyObject;
@@ -62,6 +63,7 @@ public class MainMenuController : MonoBehaviour
     void Awake()
     {
         sound = GameObject.Find("MainMenuUISounds").GetComponent<AudioSource>();
+        _load = GetComponent<LoadController>();
         scrollScript = GetComponent<MainMenuScroll>();
     }
 	// Use this for initialization
@@ -132,6 +134,7 @@ public class MainMenuController : MonoBehaviour
             {
                 NewGame();
                 Invoke("InitiateFade", 1f);
+                Invoke("LoadNextScene", 2.5f);
                 cursorArrow.gameObject.SetActive(false);
             }
             else if(cursorAt == CursorAt.Options)
@@ -241,6 +244,11 @@ public class MainMenuController : MonoBehaviour
     public void InitiateFade()
     {
         fadeScreen = true;
+    }
+
+    public void LoadNextScene()
+    {
+        _load.LoadScene("Level1");
     }
 
 
