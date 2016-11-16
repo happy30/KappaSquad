@@ -9,7 +9,6 @@ public class EnemySight : MonoBehaviour
 
     private SphereCollider coll;
 
-
 	void Awake ()
     {
         coll = GetComponent<SphereCollider>();
