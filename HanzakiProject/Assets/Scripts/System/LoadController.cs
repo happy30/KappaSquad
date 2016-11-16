@@ -18,7 +18,7 @@ public class LoadController : MonoBehaviour
     public void LoadScene(string sceneName)
     {
         StartCoroutine(LoadLevel(sceneName));
-        //loadingInterface = GameObject.Find("Canvas").GetComponent<UIManager>().loadInterface;
+        loadingInterface.SetActive(true);
         //loadSprite = GameObject.Find("Canvas").GetComponent<UIManager>().loadingPiggy;
         //progressBar = GameObject.Find("Canvas").GetComponent<UIManager>().progressBar;
         //loadingInterface.SetActive(true);
@@ -46,7 +46,7 @@ public class LoadController : MonoBehaviour
     {
         if (async != null)
         {
-            //progressBar.value = (float)async.progress;
+            progressBar.value = (float)async.progress;
             //we can have a loading bar here
             if (loadSprite != null)
             {
