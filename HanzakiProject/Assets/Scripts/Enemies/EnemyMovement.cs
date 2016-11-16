@@ -75,7 +75,9 @@ public class EnemyMovement : MonoBehaviour
                 agent.speed = runSpeed;
                 Chase();
                 break;
-            case States.Attacking:              
+            case States.Attacking:
+                anim.SetBool("Idle", false);
+                anim.SetBool("Walking", false);        
                 anim.SetBool("Attacking", true);
                 agent.speed = 0;
                 Attacking();
@@ -125,14 +127,17 @@ public class EnemyMovement : MonoBehaviour
             enemyStates = States.Patrol;
         }
 
-        if (playerDistance < attackRange)
+        if (playerDistance <= attackRange)
         {
             enemyStates = States.Attacking;
+            //agent.speed = 0;
         }
         else
         {
             mayAttack = restartAttack;
             isChasing = false;
+            agent.speed = runSpeed;
+            anim.SetBool("Idle", true);
         }
     }
 
@@ -145,7 +150,7 @@ public class EnemyMovement : MonoBehaviour
                 hit.transform.GetComponent<PlayerController>().GetHit(attackDamage);
             }
         }
-        if(distance > attackRange)
+        if(playerDistance > attackRange)
         {
             enemyStates = States.Chasing;
         }
