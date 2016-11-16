@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: WaterProDaytime
+  m_Name: WaterProDaytime 2
   m_Shader: {fileID: 4800000, guid: 1cac2e0bcc34e4b3cbb4bd85982eba83, type: 3}
   m_ShaderKeywords: _EMISSION _NORMALMAP
   m_LightmapFlags: 1
@@ -162,10 +162,10 @@ Material:
       second: 0.02
     - first:
         name: _ReflDistort
-      second: 0.33
+      second: 0.5
     - first:
         name: _RefrDistort
-      second: 0.57
+      second: 0.5
     - first:
         name: _Shininess
       second: 200
@@ -183,14 +183,14 @@ Material:
       second: 0
     - first:
         name: _WaveScale
-      second: 0.15
+      second: 0.05
     - first:
         name: _ZWrite
       second: 1
     m_Colors:
     - first:
         name: WaveSpeed
-      second: {r: -30, g: 6, b: -25, a: -6}
+      second: {r: 0, g: -100, b: 0, a: -50}
     - first:
         name: _AnimationDirection
       second: {r: 1, g: 1, b: 1, a: 1}
@@ -268,7 +268,7 @@ Material:
       second: {r: 1, g: 1, b: 0, a: 0}
     - first:
         name: _RefrColor
-      second: {r: 0.728, g: 0.922, b: 1, a: 1}
+      second: {r: 0.61894464, g: 0.64917797, b: 0.709, a: 1}
     - first:
         name: _RefractionTex_ST
       second: {r: 1, g: 1, b: 0, a: 0}
