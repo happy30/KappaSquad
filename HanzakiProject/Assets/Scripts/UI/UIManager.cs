@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class UIManager : MonoBehaviour {
 
@@ -18,6 +19,8 @@ public class UIManager : MonoBehaviour {
 
     AudioSource _sound;
 	public StatsManager stats;
+    public QuestManager quests;
+    public ProgressionManager prog;
 
     public Text shurikenAmountText;
     public Text smokeBombAmountText;
@@ -35,34 +38,82 @@ public class UIManager : MonoBehaviour {
     public GameObject dashIcon;
 
     public GameObject[] lockedIcons;
+
+    public Text mainQuestTitleText;
+    public Text[] mainQuestTasksText;
+    public RectTransform questArrow;
+
+    public Text sideQuestText;
+
+    public AudioClip questCompleted;
+    public AudioClip unlockAbilitySound;
+    public AudioClip pickUpSound;
+
+    public GameObject pickUpText;
+    public GameObject unlockAbility;
 	
 	void Awake()
 	{
 		stats = GameObject.Find("GameManager").GetComponent<StatsManager>();
+        quests = GameObject.Find("GameManager").GetComponent<QuestManager>();
+        prog = GameObject.Find("GameManager").GetComponent<ProgressionManager>();
+        _sound = GetComponent<AudioSource>();
+
+    
 	}
 
     void Start()
     {
         UnlockIcons();
+        SetQuestsText();
     }
 
     void Update()
     {
         CountConsumeables();
     }
-	/*public int shurikenAmount;
-	public Sprite locked;
-	public Sprite unlocked;
 	
-	public void Awake () 
-	{
-		
-	
-	}*/
-	
-	
-	//Keeps count of shurikens on screen
-	void CountConsumeables()
+    public void SetQuestsText()
+    {
+        mainQuestTitleText.text = quests.mainQuests[prog.mainQuestProgression].questTitle;
+        for(int i = 0; i < mainQuestTasksText.Length; i++)
+        {
+            if (i <= quests.mainQuests[prog.mainQuestProgression].atTask)
+            {
+                mainQuestTasksText[i].text = quests.mainQuests[prog.mainQuestProgression].questTasks[i];
+                if(i > 0)
+                {
+                    mainQuestTasksText[i - 1].text = StrikeThrough(quests.mainQuests[prog.mainQuestProgression].questTasks[i - 1]);
+                }
+                
+
+                questArrow.anchoredPosition = new Vector2(questArrow.anchoredPosition.x, 56 - (56 * quests.mainQuests[prog.mainQuestProgression].atTask));
+                
+            }
+            else
+            {
+                mainQuestTasksText[i].text = "";
+            }
+        }
+        if(quests.mainQuests[prog.mainQuestProgression].atTask > 0)
+        {
+            _sound.PlayOneShot(questCompleted);
+        }
+    }
+
+    public string StrikeThrough(string s)
+    {
+        string strikethrough = "";
+        foreach (char c in s)
+        {
+            strikethrough = strikethrough + c + '\u0336';
+        }
+        return strikethrough;
+    }
+
+
+    //Keeps count of shurikens on screen
+    void CountConsumeables()
 	{
         if(shurikenAmountCircle.activeSelf)
         {
@@ -76,6 +127,22 @@ public class UIManager : MonoBehaviour {
         
 		
 	}
+
+    //Play PickUp Animation
+    public void PickUp(string text)
+    {
+        pickUpText.GetComponent<Text>().text = "You Picked Up a " + text + "!";
+        pickUpText.GetComponent<Animator>().SetTrigger("PickUp");
+        _sound.PlayOneShot(pickUpSound);
+    }
+
+    //Play ability Unlocked Animation
+    public void UnlockAbility()
+    {
+        unlockAbility.GetComponent<Animator>().SetTrigger("Unlock");
+        _sound.PlayOneShot(unlockAbilitySound, 0.3f);
+    }
+
 
     //Play the letterbox animation
     public void EnterCutscene()

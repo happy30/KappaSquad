@@ -18,5 +18,9 @@ public class QuestClass
         Completed
     };
     public QuestState questState;
+    public int atTask;
+
+ 
+    
 	
 }

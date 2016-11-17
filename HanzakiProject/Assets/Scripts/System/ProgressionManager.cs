@@ -7,6 +7,7 @@ using System.Collections.Generic;
 public class ProgressionManager : MonoBehaviour
 {
     public int taskProgession;
+    public int mainQuestProgression;
 
     /* 
         There will be 4 spawnpoints

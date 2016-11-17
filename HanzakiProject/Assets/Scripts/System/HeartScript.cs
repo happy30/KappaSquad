@@ -44,7 +44,7 @@ public class HeartScript : MonoBehaviour {
             spawnedEmptyHeart = (GameObject)Instantiate(emptyHeart);
             spawnedEmptyHeart.transform.SetParent(heartPanel.transform);
             spawnedEmptyHeart.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
-            spawnedEmptyHeart.GetComponent<RectTransform>().anchoredPosition = new Vector2(i * 100, 0);
+            spawnedEmptyHeart.GetComponent<RectTransform>().anchoredPosition = new Vector3(i * 100, 0, 0);
             heartList.Add(spawnedEmptyHeart);
         }
 
