@@ -22526,7 +22526,7 @@ MonoBehaviour:
   dashCooldown: 0
   playerRotation: {x: 0, y: 0, z: 0}
   invulnerable: 0
-  invulnerableTime: 0
+  invulnerableTime: 3
 --- !u!114 &1636757298
 MonoBehaviour:
   m_ObjectHideFlags: 0
