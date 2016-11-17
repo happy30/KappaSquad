@@ -116,7 +116,7 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
-        playerModel.transform.eulerAngles = Vector3.Lerp(playerModel.transform.eulerAngles, playerRotation, 5f * Time.deltaTime);
+        playerModel.transform.eulerAngles = Vector3.Lerp(playerModel.transform.eulerAngles, playerRotation, 9f * Time.deltaTime);
     }
 
     void CheckForDash()

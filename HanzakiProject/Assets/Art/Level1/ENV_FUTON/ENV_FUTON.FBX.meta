@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: ddb68fd0fcfb00a4bb6a8cafc11a8a5d
+=======
+guid: fdec8d8345ea57a42860354170c1914b
+>>>>>>> 2e02d6dd0713164cf292347debdecd2afca09b1e
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
@@ -10,7 +14,7 @@ ModelImporter:
     4300000: futon
     9500000: //RootNode
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
   animations:
@@ -33,7 +37,11 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
+<<<<<<< HEAD
+    globalScale: 4
+=======
     globalScale: 0
+>>>>>>> ae9a636efb66e45eef638806b3834ce8c580ddd7
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
