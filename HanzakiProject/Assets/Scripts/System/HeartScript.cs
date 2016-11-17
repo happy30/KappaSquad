@@ -58,6 +58,7 @@ public class HeartScript : MonoBehaviour {
             Destroy(heartList[i]);
         }
         heartList.Clear();
+        leftSide = true;
 
         //Draw hearts
         DrawEmptyHearts();
