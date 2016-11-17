@@ -22497,7 +22497,7 @@ MonoBehaviour:
   stats: {fileID: 0}
   reloading: 0
   reloadTimer: 0
-  particleObject: {fileID: 1000010726769364, guid: d7a6a1ad3d62a3d468a8909921f9e4db,
+  particleObject: {fileID: 1000010726769364, guid: 990dbde00ecc46c47935d8f394e22965,
     type: 2}
   _playerController: {fileID: 1636757297}
 --- !u!114 &1636757297
@@ -22526,7 +22526,7 @@ MonoBehaviour:
   dashCooldown: 0
   playerRotation: {x: 0, y: 0, z: 0}
   invulnerable: 0
-  invulnerableTime: 0
+  invulnerableTime: 3
 --- !u!114 &1636757298
 MonoBehaviour:
   m_ObjectHideFlags: 0
