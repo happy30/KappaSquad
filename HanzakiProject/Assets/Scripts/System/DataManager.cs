@@ -42,7 +42,7 @@ public class DataManager : MonoBehaviour {
         displayHotkeys = optionMan.displayHotkeys;
 
 
-         xmlToSave = new XmlManager(currSavePoint, shurikenCount, player.position, questProgress, grappHook, smokeBomb, shuriken, katana,displayHotkeys);
+         xmlToSave = new XmlManager(currSavePoint, shurikenCount, player.position, questProgress, grappHook, smokeBomb, shuriken, katana, displayHotkeys);
     }
 
 	public void LoadData ()
