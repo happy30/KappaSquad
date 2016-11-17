@@ -582,7 +582,7 @@ GameObject:
   - 114: {fileID: 114000012317698052}
   m_Layer: 0
   m_Name: BabyKappa
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2253,19 +2253,16 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   walkSpeed: 2
-  runSpeed: 6
+  runSpeed: 3.5
   currentWayPoint: 0
   rangeOffSet: 15
   maxWayPoints: 3
   isAlive: 1
-  isChasing: 0
   lookOutTimer: 0
   minLookOutTime: 0
   maxLookOutTime: 4
   attackRange: 3
   attackDamage: 1
-  restartAttack: 2
-  testFloat: 4
   mayAttack: 0
   rayDis: 2
   outOfRange: 6
