@@ -8,6 +8,7 @@ public class ShurikenObject : MonoBehaviour
     public int attackPower;
     public float projectileSpeed;
     public Transform player;
+    public PlayerController playerController;
 
     public Transform model;
     public Transform model2;
@@ -21,12 +22,28 @@ public class ShurikenObject : MonoBehaviour
     void Awake()
     {
         player = GameObject.Find("PlayerModel").transform;
+        playerController = GameObject.Find("Player").GetComponent<PlayerController>();
     }
 
     void Start()
     {
-        if(player.gameObject.GetComponent<PlayerController>().xMovement > 0)
-        shurikenDirection = player.transform.forward;
+        if(playerController.levelType == PlayerController.LevelType.SS)
+        {
+            if (playerController.playerRotation.y < 100)
+            {
+                shurikenDirection = new Vector3(1, 0, 0);
+            }
+            if (playerController.playerRotation.y > 200)
+            {
+                shurikenDirection = new Vector3(-1, 0, 0);
+            }
+        }
+        else
+        {
+            shurikenDirection = player.transform.forward;
+        }
+        
+        
         transform.eulerAngles = new Vector3(90, 0, 0);
     }
 	
