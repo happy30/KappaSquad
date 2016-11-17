@@ -140,7 +140,7 @@ public class UIManager : MonoBehaviour {
     public void UnlockAbility()
     {
         unlockAbility.GetComponent<Animator>().SetTrigger("Unlock");
-        _sound.PlayOneShot(unlockAbilitySound, 0.3f);
+        _sound.PlayOneShot(unlockAbilitySound, 0.7f);
     }
 
 
