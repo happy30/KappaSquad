@@ -8,12 +8,6 @@ AnimatorController:
   m_Name: Sphere
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: Death
-    m_Type: 4
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 0}
   - m_Name: Idle
     m_Type: 4
     m_DefaultFloat: 0
@@ -26,13 +20,13 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: Chasing
+  - m_Name: Attacking
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: Attacking
+  - m_Name: Death
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -309,7 +303,7 @@ AnimatorState:
   m_SpeedParameterActive: 0
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
-  m_Motion: {fileID: 7400004, guid: ef2077eaca3bc5a459b6dec9f2428507, type: 3}
+  m_Motion: {fileID: 7400000, guid: fda1c9aa1b6064145880c9469fbcc6f5, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

@@ -84,7 +84,7 @@ public class EnemyMovement : MonoBehaviour
                 break;
         }
         playerDistance = Vector3.Distance(player.position, transform.position);
-        if (gameObject.GetComponent<EnemySight>().playerInView == true && playerDistance < outOfRange)
+        if (gameObject.GetComponent<EnemySight>().playerInView == true && playerDistance < outOfRange && enemyStates != States.Attacking)
         {
             enemyStates = States.Chasing;
         }
@@ -141,7 +141,7 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
-    void Attacking()
+    void AttackAnimation()
     {
         if (Physics.Raycast(transform.position, transform.forward, out hit, rayDis))
         {
@@ -150,7 +150,12 @@ public class EnemyMovement : MonoBehaviour
                 hit.transform.GetComponent<PlayerController>().GetHit(attackDamage);
             }
         }
-        if(playerDistance > attackRange)
+
+    }
+
+    void Attacking()
+    {
+        if (playerDistance > attackRange)
         {
             enemyStates = States.Chasing;
         }

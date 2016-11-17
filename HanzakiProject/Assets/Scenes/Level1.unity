@@ -10761,6 +10761,38 @@ Prefab:
       propertyPath: m_RootOrder
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 4000012694528088, guid: 1867a6b91ad51eb47a20f2106261689b, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0.000000056011835
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000012694528088, guid: 1867a6b91ad51eb47a20f2106261689b, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0.00000000108307
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000012694528088, guid: 1867a6b91ad51eb47a20f2106261689b, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0.11641978
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000012694528088, guid: 1867a6b91ad51eb47a20f2106261689b, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.9932001
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000010446157198, guid: 1867a6b91ad51eb47a20f2106261689b, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0.000000018718234
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000010446157198, guid: 1867a6b91ad51eb47a20f2106261689b, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0.000000018235177
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000010446157198, guid: 1867a6b91ad51eb47a20f2106261689b, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0.77122027
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000010446157198, guid: 1867a6b91ad51eb47a20f2106261689b, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.6365684
+      objectReference: {fileID: 0}
     - target: {fileID: 114000012317698052, guid: 1867a6b91ad51eb47a20f2106261689b,
         type: 2}
       propertyPath: player
@@ -10776,6 +10808,10 @@ Prefab:
       propertyPath: wayPoints.Array.data[1]
       value: 
       objectReference: {fileID: 2037861069}
+    - target: {fileID: 1000011852479716, guid: 1867a6b91ad51eb47a20f2106261689b, type: 2}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1867a6b91ad51eb47a20f2106261689b, type: 2}
   m_IsPrefabParent: 0
@@ -22524,6 +22560,7 @@ MonoBehaviour:
   doubleTapTime: 0
   dashSpeed: 12
   dashCooldown: 0
+  playerRotation: {x: 0, y: 0, z: 0}
   invulnerable: 0
   invulnerableTime: 0
 --- !u!114 &1636757298
