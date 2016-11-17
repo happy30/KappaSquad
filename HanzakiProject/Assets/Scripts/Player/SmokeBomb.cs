@@ -43,7 +43,7 @@ public class SmokeBomb : MonoBehaviour
 
     void ThrowSmokeBomb()
     {
-        _playerController.GetInvulnerable();
+        _playerController.GetInvulnerable();    
         Destroy(spawnedParticleObject = (GameObject)Instantiate(particleObject, _playerController.transform.position, Quaternion.identity), 3);
     }
 }
