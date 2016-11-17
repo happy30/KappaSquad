@@ -13,6 +13,7 @@ TagManager:
   - EnemyHead
   - Rock
   - Destructible
+  - Katana
   layers:
   - Default
   - TransparentFX
