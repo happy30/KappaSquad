@@ -50,7 +50,6 @@ public class EnemyMovement : MonoBehaviour
     {
         if (isAlive == true)
         {
-            print(enemyStates);
             switch (enemyStates)
             {
                 case States.Idle:
@@ -151,7 +150,6 @@ public class EnemyMovement : MonoBehaviour
                 hit.transform.GetComponent<PlayerController>().GetHit(attackDamage);
             }
         }
-
     }
 
     void Attacking()
