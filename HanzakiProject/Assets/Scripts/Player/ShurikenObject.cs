@@ -25,6 +25,7 @@ public class ShurikenObject : MonoBehaviour
 
     void Start()
     {
+        if(player.gameObject.GetComponent<PlayerController>().xMovement > 0)
         shurikenDirection = player.transform.forward;
         transform.eulerAngles = new Vector3(90, 0, 0);
     }
