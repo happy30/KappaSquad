@@ -64,11 +64,8 @@ public class StatsManager : MonoBehaviour
     public void AddKatana()
     {
         katanaUnlocked = true;
-<<<<<<< HEAD
         GameObject.Find("Player").GetComponent<Katana>().UpgradeWeapon();
-=======
         GameObject.Find("Katana").GetComponent<Katana>().UpgradeWeapon();
         GameObject.Find("Canvas").GetComponent<UIManager>().UnlockIcons();
->>>>>>> d7709689c74176e71d6d5bdac707f5576e470585
     }
 }

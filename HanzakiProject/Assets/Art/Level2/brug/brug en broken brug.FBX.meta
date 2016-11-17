@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-guid: b02be66f0005ee74e91d56ad22ea2b9b
-=======
-guid: 88c080d73596ffe4bba57a84fdb31193
->>>>>>> 4423b31eb63e0375ccde500d1a548a9b137c661c
+guid: 140adfcef995b7e40813b1e98c83c254
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
@@ -21,7 +17,7 @@ ModelImporter:
     4300002: BROKEN BRIDGE
     9500000: //RootNode
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
   animations:
@@ -44,7 +40,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0
+    globalScale: 2
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
