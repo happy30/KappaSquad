@@ -12,4 +12,5 @@
   <SmokeBomb>true</SmokeBomb>
   <Shuriken>true</Shuriken>
   <Katarna>true</Katarna>
+  <DisplayHotkeys></DisplayHotkeys>
 </XmlManager>
