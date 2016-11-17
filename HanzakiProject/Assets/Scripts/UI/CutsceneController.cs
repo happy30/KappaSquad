@@ -65,11 +65,11 @@ public class CutsceneController : MonoBehaviour
             {
                 if (displayLine != fullDialogueLine)
                 {
-                    scrollSpeed = 0.05f;
+                    scrollSpeed = 0.02f;
                 }
                 else
                 {
-                    scrollSpeed = 0.05f;
+                    scrollSpeed = 0.02f;
                     SetNPCNameAndText();
                 }
             }

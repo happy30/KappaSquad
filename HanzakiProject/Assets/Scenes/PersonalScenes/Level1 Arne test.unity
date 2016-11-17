@@ -505,6 +505,11 @@ Prefab:
       propertyPath: m_AABB.m_Center.z
       value: -0.21478462
       objectReference: {fileID: 0}
+    - target: {fileID: 137000012463148866, guid: 720fe15f77b7b204e811a33376149cf5,
+        type: 2}
+      propertyPath: m_AABB.m_Extent.z
+      value: 0.44855368
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 720fe15f77b7b204e811a33376149cf5, type: 2}
   m_IsPrefabParent: 0
@@ -9137,7 +9142,7 @@ Transform:
   - {fileID: 370299021}
   - {fileID: 533185230}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
 --- !u!1 &1185134564
 GameObject:
   m_ObjectHideFlags: 0
@@ -16159,7 +16164,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000011052474186, guid: 7730570bf5a171a4192f30078d62337d, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 114000013739929148, guid: 7730570bf5a171a4192f30078d62337d,
         type: 2}

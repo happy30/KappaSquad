@@ -14,6 +14,7 @@ public class DataManager : MonoBehaviour {
 
     public StatsManager statMan;
     public ProgressionManager progMan;
+    public OptionsSettings optionMan;
 
     int shurikenCount;
     int currSavePoint;
@@ -22,12 +23,14 @@ public class DataManager : MonoBehaviour {
     bool smokeBomb;
     bool shuriken;
     bool katana;
+    bool displayHotkeys;
 
 
     void Awake()
     {
         statMan = gameManager.GetComponent<StatsManager>();
         progMan = gameManager.GetComponent<ProgressionManager>();
+        optionMan = gameManager.GetComponent<OptionsSettings>();
 
         currSavePoint = progMan.spawnPointNumber;
         shurikenCount = statMan.shurikenAmount;
@@ -36,9 +39,10 @@ public class DataManager : MonoBehaviour {
         smokeBomb = statMan.smokeBombUnlocked;
         shuriken = statMan.shurikenUnlocked;
         katana = statMan.katanaUnlocked;
+        displayHotkeys = optionMan.displayHotkeys;
 
 
-         xmlToSave = new XmlManager(currSavePoint, shurikenCount, player.position, questProgress, grappHook, smokeBomb, shuriken, katana);
+         xmlToSave = new XmlManager(currSavePoint, shurikenCount, player.position, questProgress, grappHook, smokeBomb, shuriken, katana, displayHotkeys);
     }
 
 	public void LoadData ()
@@ -52,6 +56,7 @@ public class DataManager : MonoBehaviour {
         statMan.smokeBombUnlocked = xmlSaved.smokeBomb;
         statMan.shurikenUnlocked = xmlSaved.shurikenBool;
         statMan.katanaUnlocked = xmlSaved.katana;
+        optionMan.displayHotkeys = xmlSaved.displayHotkeys;
     }
 
     public void SaveData()
@@ -65,6 +70,7 @@ public class DataManager : MonoBehaviour {
         xmlSaved.smokeBomb = statMan.smokeBombUnlocked;
         xmlSaved.shurikenBool = statMan.shurikenUnlocked;
         xmlSaved.katana = statMan.katanaUnlocked;
+        xmlSaved.displayHotkeys = optionMan.displayHotkeys;
     }
 
     public XmlManager StreamData()

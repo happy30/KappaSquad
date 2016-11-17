@@ -37,6 +37,8 @@ public class PlayerController : MonoBehaviour
     public float dashSpeed;
     public float dashCooldown;
 
+    public Vector3 playerRotation;
+
     //Combat
     public bool invulnerable;
     public float invulnerableTime;
@@ -91,12 +93,12 @@ public class PlayerController : MonoBehaviour
             xMovement = Input.GetAxisRaw("Horizontal") * speed * Time.deltaTime;
             if (xMovement > 0)
             {
-                playerModel.transform.eulerAngles = new Vector3(0, 90, 0);
+                playerRotation = new Vector3(0, 90, 0);
                 zMovement = 0;
             }
             if (xMovement < 0)
             {
-                playerModel.transform.eulerAngles = new Vector3(0, -90, 0);
+                playerRotation = new Vector3(0, 270, 0);
                 zMovement = 0;
             }
             if (levelType == LevelType.TD)
@@ -104,16 +106,17 @@ public class PlayerController : MonoBehaviour
                 zMovement = Input.GetAxisRaw("Vertical") * speed * Time.deltaTime;
                 if (zMovement > 0)
                 {
-                    playerModel.transform.eulerAngles = new Vector3(0, -0, 0);
+                    playerRotation = new Vector3(0, 0, 0);
                     xMovement = 0;
                 }
                 if (zMovement < 0)
                 {
-                    playerModel.transform.eulerAngles = new Vector3(0, 180, 0);
+                    playerRotation = new Vector3(0, 180, 0);
                     xMovement = 0;
                 }
             }
-        }      
+        }
+        playerModel.transform.eulerAngles = Vector3.Lerp(playerModel.transform.eulerAngles, playerRotation, 9f * Time.deltaTime);
     }
 
     void CheckForDash()
