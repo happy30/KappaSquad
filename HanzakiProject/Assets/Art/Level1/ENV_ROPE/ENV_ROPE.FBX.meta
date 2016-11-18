@@ -1,9 +1,7 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-guid: ddb68fd0fcfb00a4bb6a8cafc11a8a5d
-=======
-guid: fdec8d8345ea57a42860354170c1914b
->>>>>>> 0862730f145d2ad212d3c721f5446ce212452896
+guid: fbb27e194abad82458ffcda561fae1f0
+timeCreated: 1479471437
+licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
@@ -11,8 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: futon
-    9500000: //RootNode
+    4300000: rope
   materials:
     importMaterials: 1
     materialName: 0
@@ -71,7 +68,7 @@ ModelImporter:
     rootMotionBoneName: 
     hasTranslationDoF: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

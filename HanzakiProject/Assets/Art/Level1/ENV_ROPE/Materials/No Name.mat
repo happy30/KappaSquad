@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: futon texture 9
+  m_Name: No Name
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -48,11 +48,7 @@ Material:
     - first:
         name: _MainTex
       second:
-<<<<<<< HEAD
-        m_Texture: {fileID: 2800000, guid: 10d214d7531bcfc4d9222874018d47ee, type: 3}
-=======
-        m_Texture: {fileID: 2800000, guid: 2e4de0a3d5821b248b9ac2dfedf947fb, type: 3}
->>>>>>> 0862730f145d2ad212d3c721f5446ce212452896
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
@@ -125,7 +121,7 @@ Material:
     m_Colors:
     - first:
         name: _Color
-      second: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
+      second: {r: 1, g: 1, b: 1, a: 1}
     - first:
         name: _EmissionColor
       second: {r: 0, g: 0, b: 0, a: 1}
