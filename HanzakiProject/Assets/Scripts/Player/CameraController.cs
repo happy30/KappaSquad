@@ -107,7 +107,9 @@ public class CameraController : MonoBehaviour
     {
         if(playerController.levelType == PlayerController.LevelType.SS)
         {
-            transform.position = Vector3.Lerp(transform.position, new Vector3(followThis.transform.position.x, transform.position.y, cutsceneZ), followTime * Time.deltaTime);
+            //transform.position = Vector3.Lerp(transform.position, new Vector3(followThis.transform.position.x, transform.position.y, cutsceneZ), followTime * Time.deltaTime);
+            transform.position = Vector3.Lerp(transform.position, followThis.transform.position, followTime * Time.deltaTime);
+            transform.eulerAngles = Vector3.Lerp(transform.eulerAngles, followThis.transform.eulerAngles, followTime * Time.deltaTime);
         }
         else
         {

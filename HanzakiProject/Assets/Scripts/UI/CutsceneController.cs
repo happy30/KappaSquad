@@ -65,11 +65,11 @@ public class CutsceneController : MonoBehaviour
             {
                 if (displayLine != fullDialogueLine)
                 {
-                    scrollSpeed = 0.05f;
+                    scrollSpeed = 0.02f;
                 }
                 else
                 {
-                    scrollSpeed = 0.05f;
+                    scrollSpeed = 0.02f;
                     SetNPCNameAndText();
                 }
             }
@@ -95,7 +95,8 @@ public class CutsceneController : MonoBehaviour
             
             if(cutsceneType == CutsceneType.MainQuest)
             {
-                //questManager.CompleteMainQuest();
+                questManager.NextTask();
+                ui.SetQuestsText();
             }
             Destroy(_interact.gameObject);
         }
