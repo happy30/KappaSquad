@@ -21,11 +21,24 @@ public class QuestManager : MonoBehaviour
     //Complete a main task and activate the next one
     public void CompleteMainQuest()
     {
-        mainQuests[_progression.taskProgession].questState = QuestClass.QuestState.Completed;
-        mainQuests[_progression.taskProgession + 1].questState = QuestClass.QuestState.Active;
-        _progression.taskProgession++;
+        mainQuests[_progression.mainQuestProgression].questState = QuestClass.QuestState.Completed;
+        mainQuests[_progression.mainQuestProgression + 1].questState = QuestClass.QuestState.Active;
+        _progression.mainQuestProgression++;
 
         //ui.updatemainquesttext
+    }
+
+    public void NextTask()
+    {
+        if(mainQuests[_progression.mainQuestProgression].atTask < mainQuests[_progression.mainQuestProgression].questTasks.Count)
+        {
+            mainQuests[_progression.mainQuestProgression].atTask++;
+        }
+        else
+        {
+            CompleteMainQuest();
+        }
+        
     }
 
     //Set a quest active

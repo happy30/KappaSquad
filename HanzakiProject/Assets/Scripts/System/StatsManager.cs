@@ -33,6 +33,9 @@ public class StatsManager : MonoBehaviour
         {
             grapplingHookUnlocked = true;
             GameObject.Find("Canvas").GetComponent<UIManager>().UnlockIcons();
+            GameObject.Find("Canvas").GetComponent<UIManager>().UnlockAbility();
+            GetComponent<QuestManager>().NextTask();
+            GameObject.Find("Canvas").GetComponent<UIManager>().SetQuestsText();
         }
     }
 

@@ -95,7 +95,8 @@ public class CutsceneController : MonoBehaviour
             
             if(cutsceneType == CutsceneType.MainQuest)
             {
-                //questManager.CompleteMainQuest();
+                questManager.NextTask();
+                ui.SetQuestsText();
             }
             Destroy(_interact.gameObject);
         }
